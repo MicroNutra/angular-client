@@ -1,7 +1,7 @@
 (function () {
   'use strict'
   angular
-    .module("app", ["app.dashboard", "app.about", "app.foodTracker", "ui.router", "angularMoment", "app.postNutrients"])
+    .module("app", ["app.dashboard", "app.signIn", "app.about", "app.foodTracker", "ui.router", "angularMoment", "app.postNutrients"])
 
   // require('./app.config.js');
   // require('./components/about/about.controller.js');

@@ -11,6 +11,7 @@
 
     vm.$onInit = $onInit;
     vm.getDashboard = getDashboard;
+    vm.getSignIn = getSignIn
 
     function $onInit () {
     }
@@ -18,6 +19,10 @@
     function getDashboard(e) {
       e.preventDefault()
       $state.go('dashboard')
+    }
+    function getSignIn(e) {
+      e.preventDefault()
+      $state.go('signIn')
     }
   }
 

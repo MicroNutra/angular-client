@@ -32,6 +32,11 @@
         url: '/dashboard/postNutrients',
         component: 'postNutrients'
       })
+      .state({
+          name: 'signIn',
+          url: '/signIn',
+          component: 'signIn'
+        })
   }
 
 })();
