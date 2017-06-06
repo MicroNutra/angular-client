@@ -1,7 +1,9 @@
 (function() {
   'use strict';
 
-  angular.module('app').config(config)
+  angular.module('app').config(config).constant('APP_CONFIG',{
+    API_BASE_URL: 'http://ec2-34-208-220-169.us-west-2.compute.amazonaws.com/'
+  })
 
   config.$inject = ['$stateProvider', '$locationProvider']
 
@@ -24,6 +26,11 @@
         name: 'foodTracker',
         url: '/dashboard/foodTracker',
         component: 'foodTracker'
+      })
+      .state({
+        name: 'test',
+        url: '/dashboard/postNutrients',
+        component: 'postNutrients'
       })
   }
 

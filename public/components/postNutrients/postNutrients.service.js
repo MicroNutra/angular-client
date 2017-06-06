@@ -4,14 +4,16 @@
   angular.module('app')
     .service('postNutrientsService', postNutrientsService)
 
-    function postNutrientsService($http, $state) {
+    function postNutrientsService($http, APP_CONFIG) {
       const vm = this
+      console.log("APP_CONFIG", APP_CONFIG);
 
-      vm.getGroups = getGroups;
+      vm.getTestData = getTestData
 
-      function getGroups (query) {
+      function getTestData () {
+        console.log("service checker");
         return $http
-          .get('https://api.nal.usda.gov/ndb/search/?format=json&max=200&q=' + query + '&offset=0&api_key=pDeYeSa2iqRqPrmEd6n6IIxoCz9rnLjZweeSR0JF')
+          .get(APP_CONFIG.API_BASE_URL+'api/micro/1')
           .then(res => console.log(res))
           .catch(err => console.log(err))
       }
