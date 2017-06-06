@@ -1,16 +1,19 @@
 var webpack = require('webpack');
 
 module.exports = {
-  context: __dirname + '/app',
   entry: {
-    app: '/public/app.module.js',
+    app: __dirname + '/public/app.module.js',
     vendor: ['angular']
   },
   output: {
-    path: __dirname + '/js',
-    filename: '/public/js/app.bundle.js'
+    path: __dirname + '/public/js',
+    filename: 'app.bundle.js'
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.bundle.js' })
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      path: __dirname + '/public/js',
+      filename: 'vendor.bundle.js'
+    })
   ]
 };
