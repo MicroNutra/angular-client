@@ -11,15 +11,10 @@
 
     $stateProvider
       .state({
-        name: 'posts',
+        name: 'dashboard',
         url: '/',
-        component: 'posts'
-      })
-      .state({
-        name: 'editPost',
-        url: '/posts/:id/edit',
-        component: 'editPost'
+        component: 'dashboard'
       })
   }
 
-}());
+})();

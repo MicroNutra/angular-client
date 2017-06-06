@@ -2,7 +2,7 @@
 <html ng-app="app">
   <head>
     <meta charset="utf-8">
-    <title>Reddit Clone</title>
+    <title>microlens</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <link rel="shortcut icon" href="./images/logo.png">
@@ -17,16 +17,18 @@
     <meta name=msapplication-TileColor content=#536878>
     <meta name=theme-color content=#536878>
     <title>MicroLens</title>
-    <link rel=stylesheet href="./css/main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel=stylesheet href="./css/main.css">
+    <link rel="stylesheet" href="./css/business-frontpage.css">
+    <base href="/">
   </head>
   <body>
-    <nav class="container-fluid">
+    <!-- <nav class="container-fluid">
       <div class="nav-logo">
         <img src="images/logo.png" alt="logo">
         <h1>microLens</h1>
       </div>
-    </nav>
+    </nav> -->
     <main class="container-fluid row">
       <section class="col-lg-11 center-block">
         <ui-view></ui-view>
@@ -64,8 +66,16 @@
       <script src="/moment/moment.js"></script>
       <script src="/angular-moment/angular-moment.js"></script>
 
-      <script src=”js/vendor.bundle.js”></script>
-      <script src=”js/app.bundle.js”></script>
+      <!-- <script src='/js/vendor.bundle.js'></script> -->
+      <!-- <script src='/js/app.bundle.js'></script> -->
+      <script src="/app.module.js"></script>
+      <script src="/app.config.js"></script>
+
+      <script src="/components/dashboard/dashboard.module.js"></script>
+      <script src="/components/dashboard/dashboard.component.js"></script>
+      <script src="/components/dashboard/dashboard.controller.js"></script>
+
+
     </main>
   </body>
 </html>
