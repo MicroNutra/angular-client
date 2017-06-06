@@ -10,6 +10,7 @@
       vm.foodResults = []
 
       vm.getGroups = getGroups;
+      vm.getSearchResults = getSearchResults;
 
       function getGroups (query) {
         return $http
@@ -25,6 +26,13 @@
             console.log(vm.groups);
             return vm.groups
           })
+          .catch(err => console.log(err))
+      }
+
+      function getSearchResults (group, query) {
+        return $http
+          .get('https://api.nal.usda.gov/ndb/search/?format=json&q=' + query + '&offset=0&ds=Standard%20Reference&fg=' + group + '&api_key=pDeYeSa2iqRqPrmEd6n6IIxoCz9rnLjZweeSR0JF')
+          .then(res => res)
           .catch(err => console.log(err))
       }
     }

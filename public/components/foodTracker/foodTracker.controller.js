@@ -12,14 +12,16 @@
     vm.groupNotSelected = true;
     vm.showGroups = []
     vm.foodResults = []
+    vm.selectedGroup = ""
+    vm.searchResults = []
 
     vm.$onInit = $onInit;
     vm.searchInput = searchInput;
     vm.selectGroup = selectGroup;
-
+    vm.activateSearchButton = activateSearchButton;
 
     function $onInit () {
-      vm.showGroups = false;
+
     }
 
     function searchInput (query) {
@@ -32,8 +34,19 @@
       // console.log(vm.showGroups);
     }
 
-    function selectGroup (group) {
+    function activateSearchButton () {
       vm.groupNotSelected = !vm.groupNotSelected
+    }
+
+    function selectGroup (group, query) {
+
+      vm.selectedGroup = group
+      foodTrackerService.getSearchResults(group, query)
+        .then(res => {
+          console.log(res)
+          vm.searchResults = res.data.list.item
+        })
+        .catch(err => console.log(err))
     }
   }
 
