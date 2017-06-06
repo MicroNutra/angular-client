@@ -6,13 +6,21 @@
 
     function postNutrientsService($http, $state) {
       const vm = this
-
       vm.getGroups = getGroups;
 
       function getGroups (query) {
         return $http
           .get('https://api.nal.usda.gov/ndb/search/?format=json&max=200&q=' + query + '&offset=0&api_key=pDeYeSa2iqRqPrmEd6n6IIxoCz9rnLjZweeSR0JF')
-          .then(res => console.log(res))
+          .then(res => {
+            vm.foodResults = res.data.list.item
+            vm.groups = []
+            vm.foodResults.forEach(food => {
+              if (!vm.groups.includes(food.group)) {
+                vm.groups.push(food.group)
+              }
+            })
+            console.log(vm.groups);
+          })
           .catch(err => console.log(err))
       }
     }

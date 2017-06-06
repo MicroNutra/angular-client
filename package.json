@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "gulp",
-    "bundle": "webpack"
+    "start": "gulp"
   },
   "keywords": [],
   "author": "",

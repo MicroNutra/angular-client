@@ -19,11 +19,17 @@
     </div>
     <div class="row">
       <div class="col l12">
-        <form name="$ctrl.searchForm" class="form-inline" novalidate ng-submit="$ctrl.searchInput($ctrl.foodQuery)" onSubmit="this.reset()">
+        <form name="$ctrl.searchForm" class="form-inline" novalidate ng-submit="$ctrl.searchInput($ctrl.foodQuery)">
           <label for="search">Search Food: </label>
           <input type="text" name="search" value="" placeholder="e.g. apple" ng-model="$ctrl.foodQuery">
-          {{$ctrl.foodQuery}}
-          <input type="submit" class="btn btn-success" value="Submit">
+          <input type="submit" class="btn btn-success" value="Select Category">
+        </form>
+
+        <form name="$ctrl.selectGroupForm" class="form-inline" novalidate ng-submit="$ctrl.searchGroup($ctrl.foodQuery, $ctrl.selectedGroup)" onSubmit="this.reset()">
+          <div ng-show="$ctrl.showGroups" ng-repeat="group in $ctrl.groups">
+            <input type="radio" value="{{group}}" ng-click="$ctrl.selectGroup(group)">
+          </div>
+          <input class="btn btn-default" type="submit" value="Search" ng-disabled="$ctrl.groupNotSelected">
         </form>
       </div>
     </div>
