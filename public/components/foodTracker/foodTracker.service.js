@@ -2,10 +2,13 @@
   'use strict'
 
   angular.module('app')
-    .service('postNutrientsService', postNutrientsService)
+    .service('foodTrackerService', foodTrackerService)
 
-    function postNutrientsService($http, $state) {
+    function foodTrackerService($http, $state) {
       const vm = this
+      vm.groups = []
+      vm.foodResults = []
+
       vm.getGroups = getGroups;
 
       function getGroups (query) {
@@ -20,6 +23,7 @@
               }
             })
             console.log(vm.groups);
+            return vm.groups
           })
           .catch(err => console.log(err))
       }

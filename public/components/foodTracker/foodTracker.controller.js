@@ -10,7 +10,8 @@
     const vm = this;
     vm.foodQuery = "";
     vm.groupNotSelected = true;
-    vm.showGroups = false;
+    vm.showGroups = []
+    vm.foodResults = []
 
     vm.$onInit = $onInit;
     vm.searchInput = searchInput;
@@ -18,12 +19,17 @@
 
 
     function $onInit () {
+      vm.showGroups = false;
     }
 
     function searchInput (query) {
-      foodTrackerService.getGroups(query)
-      vm.showGroups = !vm.showGroups
-      console.log(vm.showGroups);
+      return foodTrackerService.getGroups(query)
+        .then(res => {
+          console.log(res)
+          vm.showGroups = res
+        })
+      // vm.showGroups = !vm.showGroups
+      // console.log(vm.showGroups);
     }
 
     function selectGroup (group) {
