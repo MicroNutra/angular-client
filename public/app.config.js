@@ -11,9 +11,19 @@
 
     $stateProvider
       .state({
-        name: 'dashboard',
+        name: 'about',
         url: '/',
+        component: 'about'
+      })
+      .state({
+        name: 'dashboard',
+        url: '/dashboard',
         component: 'dashboard'
+      })
+      .state({
+        name: 'foodTracker',
+        url: '/dashboard/foodTracker',
+        component: 'foodTracker'
       })
   }
 

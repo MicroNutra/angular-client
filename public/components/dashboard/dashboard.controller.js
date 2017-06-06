@@ -10,8 +10,14 @@
     const vm = this
 
     vm.$onInit = $onInit;
+    vm.getFoodTracker = getFoodTracker;
 
     function $onInit () {
+    }
+
+    function getFoodTracker(e) {
+      e.preventDefault()
+      $state.go('foodTracker')
     }
   }
 

@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col l3">
+    <div class="img-container">
+      <img src="https://maxcdn.icons8.com/Share/icon/Cinema//avatar1600.png" alt="avatar">
+      <div class="person-details">
+        <h4>Peter O.</h4>
+        <p>Height: 6'2"</p>
+        <p>Weight: 175lbs</p>
+        <p>Age: 29</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col l9">
+    <div class="row">
+      <div class="col l12">
+        <h1>Food Tracker</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col l12">
+        <form name="$ctrl.searchForm" class="form-inline" novalidate ng-submit="$ctrl.searchInput($ctrl.foodQuery)" onSubmit="this.reset()">
+          <label for="search">Search Food: </label>
+          <input type="text" name="search" value="" placeholder="e.g. apple" ng-model="$ctrl.foodQuery">
+          {{$ctrl.foodQuery}}
+          <input type="submit" class="btn btn-success" value="Submit">
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>

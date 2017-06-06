@@ -9,12 +9,13 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="#">Sign In</a>
+            <a class="navbar-brand" href="#" ng-click="$ctrl.getDashboard($event)">Dashboard</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="#">About</a>
+                    <a href="#about">About</a>
                 </li>
 
             </ul>
@@ -37,10 +38,8 @@
 </header>
 
 <!-- Page Content -->
-<div class="container">
-
+<div class="container" id="about">
     <hr>
-
     <div class="row">
         <div class="col-sm-8">
             <h2>What We Do</h2>
