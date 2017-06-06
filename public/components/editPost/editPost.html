@@ -1,0 +1,38 @@
+<div class="row newPost-form">
+  <div class="row">
+    <div class="form-box">
+      <form name="$ctrl.editPostForm" novalidate class="form-inline" ng-submit="$ctrl.editPost($ctrl.item)" onSubmit="this.reset()">
+        <label for="title">Title</label>
+        <input ng-required="true"  ng-model="$ctrl.item.title" type="text" name="title" value="">
+        <div ng-if="$ctrl.editPostForm.title.$touched && $ctrl.editPostForm.title.$invalid">
+          <small>Enter a title</small>
+        </div>
+        <br><br>
+
+        <label for="image_url">Image Url</label>
+        <input ng-required="true"  ng-model="$ctrl.item.image_url" ng-disabled="$ctrl.editPostForm.title.$invalid" type="url" name="image_url" value="">
+        <div ng-if="$ctrl.editPostForm.image_url.$touched && $ctrl.editPostForm.image_url.$invalid">
+          <small>Enter a valid image URL</small>
+        </div>
+        <br><br>
+
+        <label for="body">Description</label>
+        <input ng-required="true"  ng-model="$ctrl.item.body" ng-disabled="$ctrl.editPostForm.image_url.$invalid" type="text" name="body" value="">
+        <div ng-if="$ctrl.editPostForm.body.$touched && $ctrl.editPostForm.body.$invalid">
+          <small>Enter a description</small>
+        </div>
+        <br><br>
+
+        <label for="author">Author</label>
+        <input ng-required="true"  ng-model="$ctrl.item.author" ng-disabled="$ctrl.editPostForm.body.$invalid" type="text" name="author" value="">
+        <div ng-if="$ctrl.editPostForm.author.$touched && $ctrl.editPostForm.author.$invalid">
+          <small>Enter your name</small>
+        </div>
+        <br><br>
+
+        <input class"btn btn-success" id="submitPost"  ng-disabled="$ctrl.editPostForm.$invalid" value="Update Post" type="submit">
+        <a ui-sref="posts" class="btn btn-success" id="cancelEdit">Cancel</a>
+      </form>
+    </div>
+  </div>
+</div>

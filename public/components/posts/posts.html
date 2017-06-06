@@ -1,0 +1,109 @@
+<div class="search-sort">
+  <span class="search">
+    <label>Search:</label>
+    <input type="text" ng-model="searchText">
+  </span>
+  <span class="sort">
+    <label>Sort:</label>
+    <select ng-model="sortBy" ng-init="sortBy='-vote_count'">
+      <option value="-vote_count">Votes</option>
+      <option value="-created_at">Date</option>
+      <option value="title">Title</option>
+    </select>
+  </span>
+
+  <span class="newPostButton">
+    <a ng-click="$ctrl.showNewPostForm = !$ctrl.showNewPostForm" class="btn btn-success">New Post</a>
+  </span>
+  <br><br>
+
+  <div ng-show="$ctrl.showNewPostForm"  ng-hide="!$ctrl.showNewPostForm" class="row newPost-form">
+    <div class="row">
+      <div class="form-box">
+        <form name="$ctrl.postForm" novalidate class="form-inline" ng-submit="$ctrl.addPost()" onSubmit="this.reset()">
+          <label for="title">Title</label>
+          <input ng-required="true"  ng-model="$ctrl.item.title" type="text" name="title" value="">
+          <div ng-if="$ctrl.postForm.title.$touched && $ctrl.postForm.title.$invalid">
+            <small>Enter a title</small>
+          </div>
+          <br><br>
+
+          <label for="image_url">Image Url</label>
+          <input ng-required="true"  ng-model="$ctrl.item.image_url" ng-disabled="$ctrl.postForm.title.$invalid" type="url" name="image_url" value="">
+          <div ng-if="$ctrl.postForm.image_url.$touched && $ctrl.postForm.image_url.$invalid">
+            <small>Enter a valid image URL</small>
+          </div>
+          <br><br>
+
+          <label for="body">Description</label>
+          <input ng-required="true"  ng-model="$ctrl.item.body" ng-disabled="$ctrl.postForm.image_url.$invalid" type="text" name="body" value="">
+          <div ng-if="$ctrl.postForm.body.$touched && $ctrl.postForm.body.$invalid">
+            <small>Enter a description</small>
+          </div>
+          <br><br>
+
+          <label for="author">Author</label>
+          <input ng-required="true"  ng-model="$ctrl.item.author" ng-disabled="$ctrl.postForm.body.$invalid" type="text" name="author" value="">
+          <div ng-if="$ctrl.postForm.author.$touched && $ctrl.postForm.author.$invalid">
+            <small>Enter your name</small>
+          </div>
+          <br><br>
+
+          <input class"btn-success" id="submitPost"  ng-disabled="$ctrl.postForm.$invalid" value="Submit" type="submit">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="well row" ng-repeat="item in $ctrl.items | filter:searchText | orderBy:sortBy">
+  <section class="col-lg-3 col-md-3 col-sm-2 col-xs-3 center-contents">
+    <img class="img-fluid" ng-src="{{item.image_url}}" alt="Image">
+    <div class="icons">
+      <span><a class="edit-post" ui-sref="editPost({id: item.id})">EDIT</a></span>&nbsp;&nbsp;&nbsp;&nbsp;
+      <span><a class="delete-post" href="#" ng-click="$ctrl.deletePost($event, item)">DELETE</a></span>
+    </div>
+  </section>
+  <section class="col-lg-7 col-md-6 col-sm-4 col-xs-2 ">
+    <a class="no-decorate" href={{item.image_url}}>
+      <span class="post-title">{{item.title}}</span>
+    </a>
+    <span class="voter">
+      <a class="no-decorate" href="#" ng-click="$ctrl.upVote($event, item)">
+        <img src="http://i.imgur.com/PdJs3Zv.png" alt="">
+      </a>
+      <a class="no-decorate" href="#" ng-click="$ctrl.downVote($event, item)">
+        <img src="http://i.imgur.com/eqLD2.png" alt="">
+      </a>
+      <span class="vote-count">{{item.vote_count}}</span>
+    </span>
+    <p class="post-description"> {{item.body}}</p>
+    <span am-time-ago="item.created_at" class="post-other-details"></span>
+    <span>&nbsp;|&nbsp;</span>
+    <img class="comments-logo"  src="http://www.iconsfind.com/wp-content/uploads/2015/11/20151111_5642dc9f7d32b.png" alt="img">
+    <a ng-click="$ctrl.showComments($event, item); showPostComments = !showPostComments">
+      <ng-pluralize class="comments-link"  count="item.comments.length" when="{'0': 'no comments', '1':'1 comment', 'other':'{} comments'}"></ng-pluralize>
+    </a>
+    <div class="row comment-box"  ng-show="showPostComments">
+      <div>
+        <ul ng-repeat="comment in item.comments">
+          <li>{{comment.content}}</li>
+        </ul>
+      </div>
+      <div class="row">
+        <div class="col-md-offset-1">
+          <form onSubmit="this.reset()"ng-submit="$ctrl.addComment(item, comment)" class="form-inline">
+            <div class="form-group">
+              <input required ng-model="comment" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="submit" value="Add Comment" class="btn btn-primary">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="col-lg-2 col-md-1 col-sm-1 col-xs-1 re-position">
+    <p>{{item.author}}</p>
+  </section>
+</div>
