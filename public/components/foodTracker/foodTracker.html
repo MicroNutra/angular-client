@@ -24,9 +24,7 @@
           <input type="text" name="search" value="" placeholder="e.g. apple" ng-model="$ctrl.foodQuery">
           <input type="submit" class="btn btn-success" value="Select Category">
         </form>
-        {{$ctrl.groups}}
         <form name="$ctrl.selectGroupForm" class="form-inline" novalidate ng-submit="$ctrl.selectGroup($ctrl.foodQuery)" onSubmit="this.reset()">
-          {{$ctrl.groups}}
           <div ng-repeat="group in $ctrl.showGroups">
             <input ng-click="$ctrl.activateSearchButton($event)" name="groupOption" type="radio" value="{{group}}">
             <label for="groupOption">{{group}}</label>
@@ -35,9 +33,10 @@
         </form>
 
         <div ng-repeat="result in $ctrl.searchResults">
-          <input name="resultOption" type="radio" value="">
+          <input name="resultOption" type="radio" value="{{result.ndbno}}" ng-click="$ctrl.selectFoodResult($event)">
           <label for="resultOption">{{result.name}}</label>
         </div>
+        <a href="#" ng-disabled="$ctrl.foodNotSelected" ng-click="$ctrl.getQuantity($event)">Select Food</a>
       </div>
     </div>
   </div>
