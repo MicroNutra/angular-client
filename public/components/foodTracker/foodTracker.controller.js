@@ -27,8 +27,8 @@
     function searchInput (query) {
       return foodTrackerService.getGroups(query)
         .then(res => {
+          console.log(res)
           vm.showGroups = res
-          $state.go($state.$current, null, { reload: true })
         })
         .catch(err => console.log(err))
 
