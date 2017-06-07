@@ -1,49 +1,71 @@
+
+<header class="foodtrackerheader">
+    <div class="foodTrackerTitle"> MicroLens </div>
+
+      <div> Food Tracker </div>
+      <div> Nutrition Tracker </div>
+      <div> Dashboard </div>
+      <div>  </div>
+      <div> | Peter
+      <img src="https://maxcdn.icons8.com/Share/icon/Cinema//avatar1600.png" alt="avatar" width=30>
+      </div>
+</header>
+
+
+
 <div class="row" id="food-tracker-shell">
-  <div class="col-lg-3" id="user-details">
-    <div class="img-container">
-      <img id="avatar" src="https://maxcdn.icons8.com/Share/icon/Cinema//avatar1600.png" alt="avatar">
-      <div class="person-details">
-        <h4>Peter O.</h4>
-        <p>Height: 6'2"</p>
-        <p>Weight: 175lbs</p>
-        <p>Age: 29</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-lg-8" id="search-area">
-    <div class="centerize">
-      <h1>Food Tracker</h1>
-      <div class="">
-        <form name="$ctrl.searchForm" class="form-inline" novalidate ng-submit="$ctrl.searchInput($ctrl.foodQuery)">
-          <label for="search">Search Food: </label>
-          <input type="text" name="search" value="" placeholder="e.g. apple" ng-model="$ctrl.foodQuery">
-          <input type="submit" class="btn btn-success" value="Select Category">
-        </form>
-        <form name="$ctrl.selectGroupForm" class="form-inline" novalidate ng-submit="$ctrl.selectGroup($ctrl.foodQuery)" onSubmit="this.reset()">
-          <div ng-repeat="group in $ctrl.showGroups">
-            <input ng-click="$ctrl.activateSearchButton($event)" name="groupOption" type="radio" value="{{group}}">
-            <label for="groupOption">{{group}}</label>
-          </div>
-          <input class="btn btn-default" type="submit" value="Search" ng-disabled="$ctrl.groupNotSelected">
-        </form>
-
-        <div ng-repeat="result in $ctrl.searchResults">
-          <input name="resultOption" type="radio" value="{{result.ndbno}}" ng-click="$ctrl.selectFoodResult($event)">
-          <label for="resultOption">{{result.name}}</label>
+    <div class="col-lg-3" id="user-details">
+        <div class="img-container">
+            <img id="avatar" src="https://maxcdn.icons8.com/Share/icon/Cinema//avatar1600.png" alt="avatar" width=100>
+            <div class="person-details">
+                <h4 class="person-name">Peter Ostiguy</h4>
+                <p><strong>Username: </strong> postiguy</p>
+                <p><strong>Height: </strong> 6'1"</p>
+                <p><strong>Weight: </strong> 170lbs</p>
+                <p><strong>Age: </strong> 29</p>
+            </div>
         </div>
-        <a href="#" ng-disabled="$ctrl.foodNotSelected" ng-click="$ctrl.getQuantity($event)">Select Food</a>
-      </div>
-
-      <div
-        <h1>Select the Measurment and Quantity</h1>
-        <div ng-repeat="measure in $ctrl.measuresArray">
-          <input ng-click="$ctrl.selectMeasurmentOption($event)" name="measurmentOption" type="radio" value="{{$index}}">
-          <label ng-model="ctrl.quantity" for="measurmentOption">{{measure.label}}</label>
-        </div>
-          <input ng-model="$ctrl.quantity" type="number" min="1" name="quantity" value="">
-        <a href="#" ng-click="$ctrl.selectMeasurement($event)">Add Food To Tracker</a>
-      </div>
     </div>
-  </div>
+
+    <div class="col-lg-8" id="search-area">
+        <div class="centerize">
+            <h1>Food Tracker</h1>
+            <div class="">
+                <form name="$ctrl.searchForm" class="form-inline" novalidate ng-submit="$ctrl.searchInput($ctrl.foodQuery)">
+                    <label for="search">Search Food: </label>
+                    <input type="text" name="search" value="" placeholder="e.g. apple" ng-model="$ctrl.foodQuery">
+                    <input type="submit" class="btn btn-success" value="Select Category">
+                </form>
+                <form name="$ctrl.selectGroupForm" class="form-inline" novalidate ng-submit="$ctrl.selectGroup($ctrl.foodQuery)" onSubmit="this.reset()">
+                    <div ng-repeat="group in $ctrl.showGroups">
+                        <input ng-click="$ctrl.activateSearchButton($event)" name="groupOption" type="radio" value="{{group}}">
+                        <label for="groupOption">{{group}}</label>
+                    </div>
+                    <input class="btn btn-default" type="submit" value="Search" ng-disabled="$ctrl.groupNotSelected">
+                </form>
+
+                <div ng-repeat="result in $ctrl.searchResults">
+                    <input name="resultOption" type="radio" value="{{result.ndbno}}" ng-click="$ctrl.selectFoodResult($event)">
+                    <label for="resultOption">{{result.name}}</label>
+                </div>
+                <a href="#" ng-disabled="$ctrl.foodNotSelected" ng-click="$ctrl.getQuantity($event)">Select Food</a>
+            </div>
+
+            <div <h1>Select the Measurment and Quantity</h1>
+                <div ng-repeat="measure in $ctrl.measuresArray">
+                    <input ng-click="$ctrl.selectMeasurmentOption($event)" name="measurmentOption" type="radio" value="{{$index}}">
+                    <label ng-model="ctrl.quantity" for="measurmentOption">{{measure.label}}</label>
+                </div>
+                <input ng-model="$ctrl.quantity" type="number" min="1" name="quantity" value="">
+                <a href="#" ng-click="$ctrl.selectMeasurement($event)">Add Food To Tracker</a>
+            </div>
+        </div>
+    </div>
 </div>
+
+
+<footer class="foodtrackerfooter">
+
+   <div class="copywrite"> &copy; MicroLens </div>
+   <div class="production"> A MicroLens Production</div>
+</footer>

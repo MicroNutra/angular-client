@@ -23,7 +23,8 @@ div.row#food-tracker-shell {
 img#avatar {
   height: 200px;
   width: auto;
-  margin-left: -25px;
+
+  margin-left: -5px;
 }
 
 div.col-lg-2#user-details {
@@ -38,183 +39,69 @@ div.col-lg-8#search-area {
   /*flex-wrap: wrap;*/
 }
 
-/* NAV */
-nav.container-fluid {
-  background-color: rgb(206,227,248);
-  margin-bottom: 20px;
-  display: flex;
+
+/*FOOD TRACKER PAGES CSS*/
+.foodtrackerheader{
+  display:flex;
+  justify-content:space-around;
   align-items: center;
-  justify-content: flex-start;
+  background-color: rgb(51, 49, 49);
+  height: 75px;
+  opacity: .90;
+  color: #3aa6dd;
+  font-size: 20px;
 }
 
-div.nav-logo {
-  display: flex;
-  align-items: center;
-}
 
-div.nav-logo h1 {
-  margin-left: 10px;
-  font-size: 2.25em;
-  font-family: 'VAG Round', sans-serif;
-}
-
-div.nav-logo img {
-  height: 50px;
-  width: auto;
-}
-
-div.newPostModal {
-  position: absolute;
-  top: 17px;
-  right: 20px;
-}
-
-a.newPost.btn.btn-success {
-  background-color: rgb(255,255,255);
-  color: black;
-  border: 1px solid black;
-}
-
-input.ng-invalid.ng-touched {
-  border: 2px solid red;
-  border-radius: 3px;
-}
-
-input.ng-valid.ng-touched {
-  border: 2px solid green;
-  border-radius: 3px;
-}
-
-input[disabled="disabled"] {
-  opacity: 0.5;
-  cursor: not-allowed !important;
-}
-
-small {
-  display: inline;
-  text-align: center;
+.foodtrackermain{
+  display:flex;
   justify-content: center;
-  color: red;
+  flex-direction: column;
+  width:90vw;
+  margin-left: 50px;
+
 }
 
-/* BODY */
-
-div.icons {
-  display: flex;
-  justify-content: center;
+div.img-container{
+    margin-top: 5px;
+    border: 1px solid black;
 }
 
-div.icons span a {
-  text-decoration: underline;
+.person-details {
+    background-color: white;
+    padding: 1em;
+    margin-left: 5px;
+}
+.person-name {
+    color: rgb(42, 94, 249);
+    size: 15px;
+    font-weight: bold;
+}
+.user-details{
+    border: 1px solid black;
 }
 
-span.newPostButton {
-  position: absolute;
-  right: 0%;
+.foodTrackerTitle {
+    color: #3aa6dd;
+    font-size: 50px;
+    font-family: Orbitron;
 }
 
-div.row.newPost-form {
-  margin-top: 15px;
-  margin-left: 10px;
-  margin-right: 10px;
+
+.copywrite{
+    margin-left: 50px;
 }
 
-div.form-box {
-  border: 2px solid black;
-  border-radius: 3px;
-  padding: 10px;
-  background-color: rgb(206,227,248);
+.production{
+    margin-right: 50px;
 }
-
-div.search-sort {
-  margin-bottom: 15px;
-}
-
-span.search {
-  margin-right: 15px;
-  margin-bottom: 15px;
-}
-
-img.img-fluid{
-  width: 100%;
-  height: auto;
-}
-
-img{
-  width: 15px;
-  height: auto;
-  margin-bottom: 5px;
-}
-
-main.container-fluid.row {
-  display: flex;
-  justify-content: center;
-}
-
-p.post-description {
-  margin-top: 20px;
-}
-
-p.post-other-details {
-  margin-top: 10px;
-}
-
-span.post-title, span.vote-count {
-  font-size: 1.25em;
-}
-
-span.post-title {
-  margin-right: 10px;
-  font-weight: bold;
-}
-
-span.vote-count {
-  margin-left: 5px;
-}
-
-a.no-decorate {
-  text-decoration: none;
-  color: black;
-}
-
-img.comments-logo {
-  margin-top: 2px;
-  height: 10px;
-  width: auto;
-}
-
-.comments-link {
-  cursor: pointer;
-}
-
-div.row.comment-box {
-  margin-top: 20px;
-}
-
-section.re-position {
-  margin-top: 40px !important;
-}
-
-/* ANIMATIONS */
-div.well.row.ng-enter {
-    -webkit-transition: 1s;
-    transition: all 2s linear;
-    opacity: 0;
-}
-
-div.well.row.ng-enter-active {
-    opacity: 1;
-}
-
-a.edit-post {
-  cursor: pointer;
-}
-
-a#cancelEdit {
-  padding: 1px 8px;
-  border-radius: 1px;
-  margin-left: 10px;
-  background-color: white;
-  color: black;
-  border-color: black;
+.foodtrackerfooter{
+    display:flex;
+    justify-content:space-around;
+    align-items: center;
+    background-color: rgb(51, 49, 49);
+    height: 75px;
+    opacity: .90;
+    color: #3aa6dd;
+    font-size: 20px;
 }
