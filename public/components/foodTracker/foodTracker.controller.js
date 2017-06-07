@@ -34,14 +34,14 @@
       // console.log(vm.showGroups);
     }
 
-    function activateSearchButton () {
+    function activateSearchButton (e) {
       vm.groupNotSelected = !vm.groupNotSelected
+      vm.selectedGroup = e.target.value
     }
 
-    function selectGroup (group, query) {
-
-      vm.selectedGroup = group
-      foodTrackerService.getSearchResults(group, query)
+    function selectGroup (query) {
+      console.log(vm.selectedGroup);
+      foodTrackerService.getSearchResults(vm.selectedGroup, query)
         .then(res => {
           console.log(res)
           vm.searchResults = res.data.list.item
