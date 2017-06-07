@@ -5,26 +5,47 @@
  */
 
 body {
-    padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+
+    padding-top: 1px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
 
 /* Header Image Background - Change the URL below to your image path (example: ../images/background.jpg) */
 
 .business-header {
-    height: 400px;
-    background: url('/images/main.jpg') center center no-repeat scroll;
+    height: 700px;
+    background: url('../images/main.jpg') center center no-repeat scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+    opacity: 0.9;
+    display:flex;
+
+}
+
+div.darken {
+  background-color: black;
+  opacity: 0.8;
+  padding-left: 5px;
+  width: 100%;
 }
 
 /* Customize the text color and shadow color and to optimize text legibility. */
 
-.tagline {
+h1.tagline {
     text-shadow: 0 0 10px #000;
-    color: #fff;
-}
+    color: white;
+    /*background-color: transparent;*/
+    font-family: 'Righteous', cursive;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      border-width: medium;
+      color: white;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 4em;
+    }
 
 .img-center {
     margin: 0 auto;
@@ -32,4 +53,58 @@ body {
 
 footer {
     margin: 50px 0;
+}
+.collapse.navbar-collapse{
+  margin-right: 100px;
+}
+a{
+  background-color: black;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    border: 3px solid #fff;
+    color: #fff;
+}
+.email{
+  background-color: white;
+  color: black;
+}
+
+.navbar-brand{
+  display:flex;
+  margin-top: 15px;
+  border: 3px solid #fff;
+}
+.navbar-form.navbar-left{
+  margin-top: 25px;
+}
+.nav.navbar-nav.navbar-right{
+  /*margin-left: 600px;*/
+}
+.logo{
+  display:flex;
+  justify-content: center;
+  margin-top: 200px;
+  border-radius: 20px;
+}
+/*#bs-example-navbar-collapse-2{
+  width:100vw;
+}*/
+
+img.img-circle.img-responsive.img-center {
+  height: 300px;
+  width: auto;
+}
+
+#signinButton{
+  margin-left: 85vw;
+  margin-top: -6vw;
+  width:8vw;
+}
+#microLens{
+  margin-top: 20px;
+}
+#aboutButton{
+  margin-left: 73vw;
+  margin-top: -6vw;
+
 }
