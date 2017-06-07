@@ -13,8 +13,8 @@
       function getTestData () {
         console.log("service checker");
         return $http
-          .get(APP_CONFIG.API_BASE_URL+'api/micro/1')
-          .then(res => console.log(res))
+          .get(APP_CONFIG.API_BASE_URL+'api/micro')
+          .then(res => console.log(res.data))
           .catch(err => console.log(err))
       }
     }

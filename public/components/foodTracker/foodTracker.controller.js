@@ -20,8 +20,15 @@
     vm.measurment = ""
     // vm.measuresArray =[]
     vm.showMeasurments =[]
-    vm.quantity =""
+    vm.quantity = 1
     vm.unit =""
+    vm.foodObject = {}
+    vm.nutrientsArray = []
+    vm.entry = ""
+    vm.eqv = ""
+    vm.unit =""
+    vm.nutrientName = ""
+    vm.nutrientGroup = ""
 
 
     vm.$onInit = $onInit;
@@ -77,9 +84,13 @@
     }
 
     function getQuantity(e) {
+      e.preventDefault()
       console.log("checking get qunaity");
       foodTrackerService.getFoodMeasures(vm.ndbno)
         .then(res=> {
+          console.log(res);
+          vm.foodObject = res
+          console.log(vm.foodObject);
           vm.measuresArray =  res.data.foods[0].food.nutrients[0].measures
           console.log(vm.measuresArray);
           vm.measuresArray.forEach(item => {
@@ -99,7 +110,26 @@
     }
 
     function selectMeasurement(e) {
-      console.log("clicked");
+      e.preventDefault()
+      console.log(vm.foodObject)
+      vm.nutrientsArray = vm.foodObject.data.foods[0].food.nutrients
+      console.log(vm.nutrientsArray);
+      vm.nutrientsArray.forEach(item => {
+        console.log(item);
+        vm.nutrientName = item.name;
+        vm.nutrientGroup = item.group
+        vm.eqv = +item.measures[vm.measurment].eqv
+        vm.unit = item.measures[vm.measurment].eunit
+        vm.entry = (+vm.eqv*vm.quantity)+vm.unit
+        console.log(+item.measures[vm.measurment].eqv);
+        console.log(item.measures[vm.measurment].eunit);
+        console.log(vm.nutrientName);
+        console.log(vm.nutrientGroup);
+        console.log(vm.eqv);
+        console.log(vm.unit);
+        console.log(vm.entry);
+      })
+
 
     }
   }
