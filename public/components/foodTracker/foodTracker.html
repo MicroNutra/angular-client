@@ -1,7 +1,7 @@
-<div class="row">
-  <div class="col l3">
+<div class="row" id="food-tracker-shell">
+  <div class="col-lg-2" id="user-details">
     <div class="img-container">
-      <img src="https://maxcdn.icons8.com/Share/icon/Cinema//avatar1600.png" alt="avatar">
+      <img id="avatar" src="https://maxcdn.icons8.com/Share/icon/Cinema//avatar1600.png" alt="avatar">
       <div class="person-details">
         <h4>Peter O.</h4>
         <p>Height: 6'2"</p>
@@ -11,14 +11,10 @@
     </div>
   </div>
 
-  <div class="col l9">
-    <div class="row">
-      <div class="col l12">
-        <h1>Food Tracker</h1>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col l12">
+  <div class="col-lg-8" id="search-area">
+    <div class="centerize">
+      <h1>Food Tracker</h1>
+      <div class="">
         <form name="$ctrl.searchForm" class="form-inline" novalidate ng-submit="$ctrl.searchInput($ctrl.foodQuery)">
           <label for="search">Search Food: </label>
           <input type="text" name="search" value="" placeholder="e.g. apple" ng-model="$ctrl.foodQuery">
@@ -50,5 +46,4 @@
       </div>
     </div>
   </div>
-
 </div>
