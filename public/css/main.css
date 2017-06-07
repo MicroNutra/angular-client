@@ -5,6 +5,10 @@
     font-style: normal;
 }
 
+body {
+  background-color: rgb(238,238,238);
+}
+
 * {
   font-family: 'VAG Light', sans-serif;
 }
@@ -23,9 +27,9 @@ img#avatar {
 }
 
 div.col-lg-2#user-details {
-  /*margin-right: 200px;*/
   display: flex;
-  /*justify-content: flex-start;*/
+  background-color: white;
+  border-radius: 3px;
 }
 
 div.col-lg-8#search-area {
