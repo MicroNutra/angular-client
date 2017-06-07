@@ -7,9 +7,10 @@
     function foodTrackerService($http, $state) {
       const vm = this
       vm.groups = []
-      vm.measurements = []
-      vm.measuresArray = []
+      // vm.measurements = []
+      // vm.measuresArray = []
       vm.foodResults = []
+      vm.nutrientObject ={}
 
       vm.getGroups = getGroups;
       vm.getSearchResults = getSearchResults;
@@ -40,18 +41,20 @@
       }
 
       function getFoodMeasures(ndbno) {
+        console.log("Checking measures");
         return $http
           .get('https://api.nal.usda.gov/ndb/V2/reports?ndbno=' + ndbno + '&type=b&format=json&api_key=pDeYeSa2iqRqPrmEd6n6IIxoCz9rnLjZweeSR0JF')
           .then(res => {
-            console.log(res)
-            vm.measuresArray = res.data.foods[0].food.nutrients[0].measures
-            console.log(vm.measuresArray);
-            vm.measuresArray.forEach(item => {
-              vm.measurements.push(item.label)
+            // console.log(res)
+            vm.nutrientObject = res
+            // console.log(vm.nutrientObject);
+            // vm.measuresArray = res.data.foods[0].food.nutrients[0].measures
+            // vm.measuresArray.forEach(item => {
+            //   vm.measurements.push(item.label)
+            return vm.nutrientObject
             })
-            console.log(vm.measurements);
-          })
-          .catch(err => console.log(err))
+            .catch(err => console.log(err))
+
       }
     }
 

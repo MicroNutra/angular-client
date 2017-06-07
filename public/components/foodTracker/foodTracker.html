@@ -38,6 +38,16 @@
         </div>
         <a href="#" ng-disabled="$ctrl.foodNotSelected" ng-click="$ctrl.getQuantity($event)">Select Food</a>
       </div>
+
+      <div
+        <h1>Select the Measurment and Quantity</h1>
+        <div ng-repeat="measure in $ctrl.measuresArray">
+          <input ng-click="$ctrl.selectMeasurmentOption($event)" name="measurmentOption" type="radio" value="{{measure.label}}">
+          <label ng-model="ctrl.quantity" for="measurmentOption">{{measure.label}}</label>
+        </div>
+          <input type="text" name="quantity" value="">
+        <a href="#" ng-click="$ctrl.selectMeasurement($event)">Add Food To Tracker</a>
+      </div>
     </div>
   </div>
 

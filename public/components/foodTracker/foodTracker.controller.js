@@ -11,11 +11,18 @@
     vm.foodQuery = "";
     vm.groupNotSelected = true;
     vm.foodNotSelected = true;
+    vm.measurementNotSelected = true;
     vm.showGroups = []
     vm.foodResults = []
     vm.selectedGroup = ""
     vm.searchResults = []
     vm.ndbno = ""
+    vm.measurment = ""
+    // vm.measuresArray =[]
+    vm.showMeasurments =[]
+    vm.quantity =""
+    vm.unit =""
+
 
     vm.$onInit = $onInit;
     vm.searchInput = searchInput;
@@ -23,6 +30,10 @@
     vm.activateSearchButton = activateSearchButton;
     vm.selectFoodResult = selectFoodResult;
     vm.getQuantity = getQuantity;
+    vm.selectMeasurmentOption = selectMeasurmentOption;
+    vm.getQuantity = getQuantity;
+    vm.selectMeasurement = selectMeasurement
+
 
     function $onInit () {
 
@@ -54,19 +65,42 @@
     }
 
     function selectGroup (query) {
+      console.log(query);
       console.log(vm.selectedGroup);
       foodTrackerService.getSearchResults(vm.selectedGroup, query)
         .then(res => {
           vm.searchResults = res.data.list.item
+          console.log(vm.searchResults);
+          console.log("lkdnwlkdnwelknw");
         })
         .catch(err => console.log(err))
     }
 
     function getQuantity(e) {
-      e.preventDefault()
+      console.log("checking get qunaity");
       foodTrackerService.getFoodMeasures(vm.ndbno)
-        .then(res => res)
-        .catch(err => console.log(err))
+        .then(res=> {
+          vm.measuresArray =  res.data.foods[0].food.nutrients[0].measures
+          console.log(vm.measuresArray);
+          vm.measuresArray.forEach(item => {
+            vm.showMeasurments.push(item.label)
+        })
+        console.log(vm.showMeasurments);
+      }).catch(err => console.log(err))
+      }
+
+    function selectMeasurmentOption(e){
+      console.log(e.target);
+      vm.measurementNotSelected = !vm.measurementNotSelected
+      vm.measurment = e.target.value
+      console.log(vm.measurment);
+      // console.log(vm.quantity);
+      // console.log(vm.unit);
+    }
+
+    function selectMeasurement(e) {
+      console.log("clicked");
+
     }
   }
 
