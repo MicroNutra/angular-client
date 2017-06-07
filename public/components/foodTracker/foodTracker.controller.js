@@ -6,6 +6,7 @@
 
   FoodTrackerController.$inject = ['$http', '$state', 'foodTrackerService']
 
+
   function FoodTrackerController($http, $state, foodTrackerService) {
     const vm = this;
     vm.foodQuery = "";
@@ -25,10 +26,14 @@
     vm.foodObject = {}
     vm.nutrientsArray = []
     vm.entry = ""
-    vm.eqv = ""
+    vm.value = ""
     vm.unit =""
     vm.nutrientName = ""
     vm.nutrientGroup = ""
+    vm.macro = {}
+    vm.micro = {minerals:{},vitamins:{}}
+    vm.addName = ""
+    vm.nutrientCounter = 1
 
 
     vm.$onInit = $onInit;
@@ -118,19 +123,29 @@
         console.log(item);
         vm.nutrientName = item.name;
         vm.nutrientGroup = item.group
-        vm.eqv = +item.measures[vm.measurment].eqv
-        vm.unit = item.measures[vm.measurment].eunit
-        vm.entry = (+vm.eqv*vm.quantity)+vm.unit
-        console.log(+item.measures[vm.measurment].eqv);
-        console.log(item.measures[vm.measurment].eunit);
-        console.log(vm.nutrientName);
-        console.log(vm.nutrientGroup);
-        console.log(vm.eqv);
-        console.log(vm.unit);
-        console.log(vm.entry);
+        vm.value = +item.measures[vm.measurment].value
+        vm.unit = item.unit
+        vm.entry = (+vm.value*vm.quantity)+vm.unit
+        console.log(vm.nutrientsArray);
+        if (item.group === "Proximates"){
+          let name = vm.addName
+          vm.addName = item.name
+          vm.macro[item.name] = vm.entry
+          console.log(vm.macro[name]);
+        }else if(item.group === "Vitamins"){
+          let vname = vm.addName
+          vm.addName = item.name
+          vm.micro.vitamins[item.name] = vm.entry
+        }else if(item.group === "Minerals"){
+          let mname = vm.addName
+          vm.addName = item.name
+          vm.micro.minerals[item.name] = vm.entry
+        }
+        vm.nutrientCounter++
+        console.log(vm.macro);
+        console.log(vm.micro);
+        console.log(item);
       })
-
-
     }
   }
 
