@@ -8,10 +8,10 @@ gulp.task('default', ['browser-sync'], function () {
 
 gulp.task('browser-sync', ['nodemon'], function() {
   browserSync.init({
-    proxy: 'http://localhost:3001',
-    files: ['app/public/**/*.*'],
+    proxy: 'http://localhost:5000',
+    files: ['public/**/**/*.*'],
     browser: 'google chrome',
-    port: 3001,
+    port: 7000,
 		reloadDelay: 1000,
   })
 })
@@ -23,7 +23,7 @@ gulp.task('nodemon', function (cb) {
     script: './app.js',
     ignore: [
       'test/',
-      'app/public/',
+      'public/',
       'gulpfile.js',
       'node_modules/'
     ],

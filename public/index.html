@@ -33,7 +33,7 @@
       <section class="col-lg-11 center-block">
         <ui-view></ui-view>
       </section>
-
+    </main>
       <!-- <script>
         if ('serviceWorker' in navigator) {
           window.addEventListener('load', () => { navigator.serviceWorker.register('./js/sw.js').then((registration) => {
@@ -48,23 +48,10 @@
           console.log('service worker is not supported');
         }
       </script> -->
-      <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
-      <script>
-        var config = {
-          apiKey: "AIzaSyAVq9ozyAQgsNJeAKB4HPMDJIljRiOanfg",
-          authDomain: "q3-test.firebaseapp.com",
-          databaseURL: "https://q3-test.firebaseio.com",
-          projectId: "q3-test",
-          storageBucket: "q3-test.appspot.com",
-          messagingSenderId: "730172197768"
-        };
-        firebase.initializeApp(config);
-      </script>
-
-      <script src="/angular/angular.min.js"></script>
-      <script src="/angular-ui-router/release/angular-ui-router.min.js"></script>
-      <script src="/moment/moment.js"></script>
-      <script src="/angular-moment/angular-moment.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.0-beta.3/angular-ui-router.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/1.0.1/angular-moment.js"></script>
 
       <!-- <script src='/js/vendor.bundle.js'></script> -->
       <!-- <script src='/js/app.bundle.js'></script> -->
@@ -89,6 +76,17 @@
       <script src="/components/postNutrients/postNutrients.controller.js"></script>
       <script src="/components/postNutrients/postNutrients.service.js"></script>
 
-    </main>
+      <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
+      <script>
+        var config = {
+          apiKey: "AIzaSyAVq9ozyAQgsNJeAKB4HPMDJIljRiOanfg",
+          authDomain: "q3-test.firebaseapp.com",
+          databaseURL: "https://q3-test.firebaseio.com",
+          projectId: "q3-test",
+          storageBucket: "q3-test.appspot.com",
+          messagingSenderId: "730172197768"
+        };
+        firebase.initializeApp(config);
+      </script>
   </body>
 </html>
