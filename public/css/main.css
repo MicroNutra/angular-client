@@ -117,6 +117,9 @@ div.img-container{
     border: 1px solid black;
 }
 
+.foodtracker-result-list{
+    border: 1px solid black;
+}
 .person-details {
     background-color: white;
     padding: 1em;

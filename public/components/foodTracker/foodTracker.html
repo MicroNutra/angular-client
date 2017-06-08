@@ -44,13 +44,16 @@
                     </div>
                     <input class="btn btn-default" type="submit" value="Search" ng-disabled="$ctrl.groupNotSelected">
                 </form>
-
+      <div class="foodtracker-result-list" style="overflow:scroll; height: 400px;">
+         <h4> Results </h4>
                 <div ng-repeat="result in $ctrl.searchResults">
                     <input name="resultOption" type="radio" value="{{result.ndbno}}" ng-click="$ctrl.selectFoodResult($event)">
                     <label for="resultOption">{{result.name}}</label>
                 </div>
+      </div>
                 <a href="#" ng-disabled="$ctrl.foodNotSelected" ng-click="$ctrl.getQuantity($event)">Select Food</a>
             </div>
+
 
             <div <h1>Select the Measurment and Quantity</h1>
                 <div ng-repeat="measure in $ctrl.measuresArray">
