@@ -2,6 +2,7 @@
 <header class="foodtrackerheader">
     <div class="foodTrackerTitle"> MicroLens </div>
 
+
       <div> Food Tracker </div>
       <div> Nutrition Tracker </div>
       <div> Dashboard </div>
@@ -9,6 +10,7 @@
       <div> | Peter
       <img src="https://maxcdn.icons8.com/Share/icon/Cinema//avatar1600.png" alt="avatar" width=30>
       </div>
+
 </header>
 
 
@@ -44,7 +46,9 @@
                     </div>
                     <input class="btn btn-default" type="submit" value="Search" ng-disabled="$ctrl.groupNotSelected">
                 </form>
-      <div class="foodtracker-result-list" style="overflow:scroll; height: 400px;">
+
+
+      <div ng-show="$ctrl.showResults" class="foodtracker-result-list" style="overflow:scroll; height: 400px;">
          <h4> Results </h4>
                 <div ng-repeat="result in $ctrl.searchResults">
                     <input name="resultOption" type="radio" value="{{result.ndbno}}" ng-click="$ctrl.selectFoodResult($event)">

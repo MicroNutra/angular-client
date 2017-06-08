@@ -5,9 +5,10 @@
  */
 
 body {
-
-    padding-top: 1px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    padding-top: 1px;
+    /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
+
 
 /* Header Image Background - Change the URL below to your image path (example: ../images/background.jpg) */
 
@@ -19,16 +20,24 @@ body {
     background-size: cover;
     -o-background-size: cover;
     opacity: 0.9;
-    display:flex;
+    display: flex;
+}
 
+#aboutButton {
+    margin-left: 70vw;
+    margin-top: -8vw;
+    width: 500px;
+    height: 300px;
+    padding: 14px;
 }
 
 div.darken {
-  background-color: black;
-  opacity: 0.8;
-  padding-left: 5px;
-  width: 100%;
+    background-color: black;
+    opacity: 0.8;
+    padding-left: 5px;
+    width: 100%;
 }
+
 
 /* Customize the text color and shadow color and to optimize text legibility. */
 
@@ -37,15 +46,15 @@ h1.tagline {
     color: white;
     /*background-color: transparent;*/
     font-family: 'Righteous', cursive;
-      -moz-osx-font-smoothing: grayscale;
-      -webkit-font-smoothing: antialiased;
-      border-width: medium;
-      color: white;
-      display:flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 4em;
-    }
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    border-width: medium;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4em;
+}
 
 .img-center {
     margin: 0 auto;
@@ -54,57 +63,82 @@ h1.tagline {
 footer {
     margin: 50px 0;
 }
-.collapse.navbar-collapse{
-  margin-right: 100px;
+
+.collapse.navbar-collapse {
+    margin-right: 10px;
 }
-a{
-  background-color: black;
+
+a {
+    background-color: black;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     border: 3px solid #fff;
     color: #fff;
 }
-.email{
-  background-color: white;
-  color: black;
+
+.email {
+    background-color: white;
+    color: black;
 }
 
-.navbar-brand{
-  display:flex;
-  margin-top: 15px;
-  border: 3px solid #fff;
+.navbar-brand {
+    display: flex;
+    margin-top: 15px;
+    border: 3px solid #fff;
 }
-.navbar-form.navbar-left{
-  margin-top: 25px;
+
+.navbar-form.navbar-left {
+    margin-top: 25px;
 }
-.nav.navbar-nav.navbar-right{
-  /*margin-left: 600px;*/
+
+.nav.navbar-nav.navbar-right {
+    /*margin-left: 600px;*/
 }
-.logo{
-  display:flex;
-  justify-content: center;
-  margin-top: 200px;
-  border-radius: 20px;
+
+.logo {
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+    border-radius: 20px;
 }
+
+
 /*#bs-example-navbar-collapse-2{
   width:100vw;
 }*/
 
 img.img-circle.img-responsive.img-center {
-  height: 300px;
-  width: auto;
+    height: 300px;
+    width: auto;
 }
 
-#signinButton{
-  margin-left: 85vw;
-  margin-top: -6vw;
-  width:8vw;
-}
-#microLens{
+.top{
+  display:flex;
+  justify-content:flex-start;
   margin-top: 20px;
 }
-#aboutButton{
-  margin-left: 73vw;
-  margin-top: -6vw;
-
+.aboutButton{
+  padding: 10px;
+  font-size: 18px;
+  display:flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+div.rightButtons {
+  display: flex !important;
+  flex-wrap: nowrap;
+}
+.signinButton{
+padding: 10px;
+font-size: 18px;
+display:flex;
+justify-content: center;
+margin-top: 30px;
+margin-bottom: 30px;
+margin-left: 10px;
+}
+.buttons{
+display:flex !important;
+justify-content: space-between;
 }
