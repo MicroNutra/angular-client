@@ -4,17 +4,17 @@
   angular.module('app')
     .service('foodTrackerService', foodTrackerService)
 
-    function foodTrackerService($http, $state) {
+    function foodTrackerService($http, $state, APP_CONFIG) {
       const vm = this
       vm.groups = []
-      // vm.measurements = []
-      // vm.measuresArray = []
+      vm.measuresArray = []
       vm.foodResults = []
       vm.nutrientObject ={}
 
       vm.getGroups = getGroups;
       vm.getSearchResults = getSearchResults;
       vm.getFoodMeasures = getFoodMeasures;
+      vm.postNutrients = postNutrients
 
       function getGroups (query) {
         return $http
@@ -45,34 +45,19 @@
         return $http
           .get('https://api.nal.usda.gov/ndb/V2/reports?ndbno=' + ndbno + '&type=b&format=json&api_key=pDeYeSa2iqRqPrmEd6n6IIxoCz9rnLjZweeSR0JF')
           .then(res => {
-            // console.log(res)
             vm.nutrientObject = res
-            // console.log(vm.nutrientObject);
-            // vm.measuresArray = res.data.foods[0].food.nutrients[0].measures
-            // vm.measuresArray.forEach(item => {
-            //   vm.measurements.push(item.label)
             return vm.nutrientObject
             })
             .catch(err => console.log(err))
+      }
 
+      function postNutrients(entry){
+        console.log(entry);
+        return $http
+          .get(APP_CONFIG.API_BASE_URL+'api/micro'/1)
+          .then(res => console.log(res.data))
+          .catch(err => console.log(err))
       }
     }
 
 }());
-
-
-// searchGroups() {
-//     axios.get('https://api.nal.usda.gov/ndb/search/?format=json&max=200&q=apple&offset=0&api_key=pDeYeSa2iqRqPrmEd6n6IIxoCz9rnLjZweeSR0JF')
-//     .then(res => {
-//       let foodResults = res.data.list.item
-//       let newGroups = []
-//       foodResults.forEach(item => {
-//         if (!newGroups.includes(item.group)) {
-//           newGroups.push(item.group)
-//         }
-//       })
-//       this.setState({groups: newGroups})
-//       console.log(this.state.groups);
-//     })
-//     .catch(err => console.log(err))
-//   }
