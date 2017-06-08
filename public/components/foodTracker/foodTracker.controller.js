@@ -9,6 +9,7 @@
 
   function FoodTrackerController($http, $state, foodTrackerService) {
     const vm = this;
+    vm.showResults = false;
     vm.foodQuery = "";
     vm.groupNotSelected = true;
     vm.foodNotSelected = true;
@@ -77,6 +78,7 @@
     }
 
     function selectGroup (query) {
+        vm.showResults = !vm.showResults
       console.log(query);
       console.log(vm.selectedGroup);
       foodTrackerService.getSearchResults(vm.selectedGroup, query)

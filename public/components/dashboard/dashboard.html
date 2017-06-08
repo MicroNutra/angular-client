@@ -1,9 +1,12 @@
 <header class="dashboardtrackerheader">
     <div class="dashboardTrackerTitle"> MicroLens </div>
-
-      <div class="dashlabel"> | Dashboard</div>
+    <div class="dashlabel"> | Dashboard</div>
 
 </header>
+
+
+
+
 <div class="row" id="dash-tracker-shell">
     <div class="col-lg-3" id="user-details">
         <div class="img-container">
@@ -21,25 +24,32 @@
     <div class='container'>
 
         <h1 class='title'>Dashboard</h1>
-        <p class='about'>info...</p>
-        <a href="#" ng-click="$ctrl.getFoodTracker($event)">Food Tracker</a>
-        <a href="#" ng-click="$ctrl.testLog($event)">Test API CALL</a>
+
+        <input type="submit" ng-click="$ctrl.getFoodTracker($event)" class="btn btn-success" value="Food Tracker">
+
+        <input type="submit" ng-click="$ctrl.testLog($event)" class="btn btn-success" value="Test API CALL">
+
+        <!-- <a href="#" ng-click="$ctrl.getFoodTracker($event)">Food Tracker</a>
+        <a href="#" ng-click="$ctrl.testLog($event)">Test API CALL</a> -->
+
+
+
 
 
         <div class="dummyData">
-           <h4>Dummy div for d3 - Micro
+            <h4>Dummy div for d3 - Micro
            <img id="macroOoverview" src="./images/dummyImages/MicroOverview.jpg.jpeg" alt="macroOoverview" height=300></h4>
 
-           <h4>Dummy div for d3 - Macro
+            <h4>Dummy div for d3 - Macro
             <img id="microOoverview" src="./images/dummyImages/MacroOverview.jpg.jpeg" alt="macroOoverview" height=300>
             </h4>
         </div>
 
         <div class="dummyData">
-           <h4>Dummy div for d3 - My Nutrients Needs Graph
+            <h4>Dummy div for d3 - My Nutrients Needs Graph
            <img id="macroOoverview" src="./images/dummyImages/MyNutrientNeeds.jpg.jpeg" alt="macroOoverview" height=300></h4>
 
-           <h4> Dummy div for d3 - My Food Lists
+            <h4> Dummy div for d3 - My Food Lists
             <img id="microOoverview" src="./images/dummyImages/FoodLists.jpg.jpeg" alt="macroOoverview" height=400>
             </h4>
         </div>
@@ -53,6 +63,6 @@
 
 
 <footer class="foodtrackerfooter">
-   <div class="copywrite"> &copy; MicroLens </div>
-   <div class="production"> A MicroLens Production</div>
+    <div class="copywrite"> &copy; MicroLens </div>
+    <div class="production"> A MicroLens Production</div>
 </footer>
