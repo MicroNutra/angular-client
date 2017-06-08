@@ -4,10 +4,10 @@
     .module("app.foodTracker")
     .controller('FoodTrackerController', FoodTrackerController)
 
-  FoodTrackerController.$inject = ['$http', '$state', 'foodTrackerService']
+  FoodTrackerController.$inject = ['$http', '$state', '$scope',  'foodTrackerService']
 
 
-  function FoodTrackerController($http, $state, foodTrackerService) {
+  function FoodTrackerController($http, $state, $scope,  foodTrackerService) {
     const vm = this;
     vm.foodQuery = "";
     vm.groupNotSelected = true;
@@ -34,6 +34,7 @@
     vm.micro = {minerals:{},vitamins:{}}
     vm.addName = ""
     vm.nutrientCounter = 1
+    vm.img = vm.vid = {}
 
 
     vm.$onInit = $onInit;
@@ -47,13 +48,46 @@
     vm.selectMeasurement = selectMeasurement;
     vm.showForm = showForm;
     vm.cancelForm = cancelForm;
-
+    vm.uploadFoodImage = uploadFoodImage;
+    vm.changed = changed;
 
     function $onInit () {
       vm.showAddForm = false;
       vm.showMeasurmentsDiv = false;
       vm.showResults = false;
       vm.showManualSubmitButton = false;
+      vm.showImageUploadForm = false;
+      vm.imgAvailable=false;
+      vm.vidAvailable=false;
+    }
+
+
+
+    function changed (){
+        console.log('clicked')
+    }
+        var el = document.getElementById('the-photo-file-field')
+        angular.element(el).bind('change', function( evt ) {
+          $scope.$apply(function() {
+            vm['img'] = evt.target.files;
+            vm.imgAvailable=true;
+
+            var reader = new FileReader();
+
+            reader.onload = function(event) {
+              $scope.$apply(function() {
+                vm.the_url = event.target.result
+              });
+            };
+
+            reader.readAsDataURL(evt.target.files[0]);
+          });
+        });
+
+
+    function uploadFoodImage (e) {
+      e.preventDefault()
+      vm.showImageUploadForm = !vm.showImageUploadForm
     }
 
     function cancelForm (e) {
