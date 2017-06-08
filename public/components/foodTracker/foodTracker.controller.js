@@ -35,6 +35,7 @@
     vm.addName = ""
     vm.nutrientCounter = 1
     vm.img = vm.vid = {}
+    vm.foodName = ""
 
 
     vm.$onInit = $onInit;
@@ -172,6 +173,7 @@
       e.preventDefault()
       console.log(vm.foodObject)
       vm.nutrientsArray = vm.foodObject.data.foods[0].food.nutrients
+      vm.foodName = vm.foodObject.data.foods[0].food.desc.name
       console.log(vm.nutrientsArray);
       vm.nutrientsArray.forEach(item => {
         console.log(item);
@@ -195,7 +197,7 @@
             }
             // vm.nutrientCounter++
 
-            foodTrackerService.postNutrients(vm.macro, vm.micro)
+            foodTrackerService.postNutrients(vm.macro, vm.micro, vm.foodName, vm.quantity, vm.measurment)
             console.log(vm.macro);
             console.log(vm.micro);
       })
