@@ -121,31 +121,132 @@
       console.log(vm.nutrientsArray);
       vm.nutrientsArray.forEach(item => {
         console.log(item);
-        vm.nutrientName = item.name;
-        vm.nutrientGroup = item.group
-        vm.value = +item.measures[vm.measurment].value
-        vm.unit = item.unit
-        vm.entry = (+vm.value*vm.quantity)+vm.unit
-        console.log(vm.nutrientsArray);
-        if (item.group === "Proximates"){
-          let name = vm.addName
-          vm.addName = item.name
-          vm.macro[item.name] = vm.entry
-          console.log(vm.macro[name]);
-        }else if(item.group === "Vitamins"){
-          let vname = vm.addName
-          vm.addName = item.name
-          vm.micro.vitamins[item.name] = vm.entry
-        }else if(item.group === "Minerals"){
-          let mname = vm.addName
-          vm.addName = item.name
-          vm.micro.minerals[item.name] = vm.entry
-        }
-        vm.nutrientCounter++
-        console.log(vm.macro);
-        console.log(vm.micro);
-        console.log(item);
+        console.log(normalizeData(item));
+            // vm.nutrientName = normalizeData(item);
+            // vm.nutrientGroup = item.group
+            vm.value = +item.measures[vm.measurment].value
+            vm.unit = item.unit
+            vm.entry = (+vm.value*vm.quantity)+vm.unit
+            item.name = normalizeData(item)
+            console.log(vm.nutrientsArray);
+            if (item.group === "Proximates"){
+              vm.macro[item.name] = vm.entry
+              console.log(vm.macro[name]);
+            }else if(item.group === "Vitamins"){
+              // item.name = normalizeData(item)
+              vm.micro.vitamins[item.name] = vm.entry
+            }else if(item.group === "Minerals"){
+              // item.name = normalizeData(item)
+              vm.micro.minerals[item.name] = vm.entry
+            }
+            // vm.nutrientCounter++
+
+            foodTrackerService.postNutrients(vm.macro, vm.micro)
+            console.log(vm.macro);
+            console.log(vm.micro);
       })
+
+    }
+
+    function normalizeData(item) {
+      console.log(item);
+      if (item.name.includes("Calcium")){
+         item.name = "calcium"
+      }
+      else if(item.name.includes("Chromium")){
+          item.name = "chromium"
+       }
+      else if(item.name.includes("Flouride")){
+          item.name = "flouride"
+       }
+      else if(item.name.includes("Iodine")){
+          item.name = "iodine"
+       }
+      else if(item.name.includes("Iron")){
+          item.name = "iron"
+       }
+      else if(item.name.includes("Magnesium")){
+          item.name = "magnesium"
+       }
+      else if(item.name.includes("Manganese")){
+          item.name = "manganese"
+       }
+      else if(item.name.includes("Molybdenum")){
+          item.name = "molybdenum"
+       }
+      else if(item.name.includes("Phosphorus")){
+          item.name = "phosphorus"
+       }
+      else if(item.name.includes("Selenium")){
+          item.name = "selenium"
+       }
+      else if(item.name.includes("Zinc")){
+          item.name = "zinc"
+       }
+      else if(item.name.includes("Potassium")){
+          item.name = "potassium"
+       }
+      else if(item.name.includes("Sodium")){
+          item.name = "sodium"
+       }
+      else if(item.name.includes("Chloride")){
+          item.name = "chloride"
+       }
+      else if(item.name.includes("Vitamin A")){
+          item.name = "vitamin_a"
+       }
+      else if(item.name.includes("Vitamin B-12")){
+          item.name = "vitamin_b12"
+       }
+      else if(item.name.includes("Vitamin C")){
+          item.name = "vitamin_c"
+       }
+      else if(item.name.includes("Vitamin D")){
+          item.name = "vitamin_d"
+       }
+      else if(item.name.includes("Vitamin E")){
+          item.name = "vitamin_e"
+       }
+      else if(item.name.includes("Vitamin K")){
+          item.name = "vitamin_k"
+       }
+      else if(item.name.includes("Thiamin")){
+          item.name = "thiamin"
+       }
+      else if(item.name.includes("Riboflavin")){
+          item.name = "riboflavin"
+       }
+      else if(item.name.includes("Pathoethenic")){
+          item.name = "pathoethenic_acid"
+       }
+      else if(item.name.includes("Biotin")){
+          item.name = "biotin"
+       }
+      else if(item.name.includes("Choline")){
+          item.name = "choline"
+       }
+      else if(item.name.includes("Protein")){
+          item.name = "protein"
+       }
+      else if(item.name.includes("Total lipid")){
+          item.name = "fats"
+       }
+      else if(item.name.includes("Carbohydrate")){
+          item.name = "carbohydrates"
+       }
+      else if(item.name.includes("Energy")){
+          item.name = "calories"
+       }
+      else if(item.name.includes("Fiber")){
+          item.name = "fibers"
+       }
+      else if(item.name.includes("Sugars")){
+          item.name = "sugars"
+       }
+      else if(item.name.includes("Water")){
+          item.name = "water"
+       }
+       return item.name
     }
   }
 
