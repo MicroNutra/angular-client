@@ -177,7 +177,12 @@ div.img-container{
     font-family: 'Righteous', cursive;
     margin-top: 5px;
     margin-bottom: 0px;
-    position: fixed;
+    /*position: fixed;*/
     bottom: 0;
     width: 100%;
+}
+
+.cancelbtn{
+  background-color: red;
+  color: white;
 }

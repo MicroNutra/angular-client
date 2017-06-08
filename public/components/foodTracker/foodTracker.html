@@ -32,7 +32,14 @@
     <div class="col-lg-8" id="search-area">
         <div class="centerize">
             <h1>Food Tracker</h1>
-            <div class="">
+
+            <a href="#" ng-click="$ctrl.showForm($event)">Manual Entry</a>
+            <a href="#" ng-click="$ctrl.uploadFoodImage($event)">Upload Image</a>
+
+            <div ng-show="$ctrl.showAddForm" class="">
+                <br>
+                <a class="cancelbtn" href="#" ng-click="$ctrl.cancelForm($event)">Cancel</a>
+                <br>
                 <form name="$ctrl.searchForm" class="form-inline" novalidate ng-submit="$ctrl.searchInput($ctrl.foodQuery)">
                     <label for="search">Search Food: </label>
                     <input type="text" name="search" value="" placeholder="e.g. apple" ng-model="$ctrl.foodQuery">
@@ -42,24 +49,27 @@
                     <div ng-repeat="group in $ctrl.showGroups">
                         <input ng-click="$ctrl.activateSearchButton($event)" name="groupOption" type="radio" value="{{group}}">
                         <label for="groupOption">{{group}}</label>
-
                     </div>
-                    <input class="btn btn-default" type="submit" value="Search" ng-disabled="$ctrl.groupNotSelected">
+                    <input class="btn btn-default" type="submit" value="Search" ng-show="$ctrl.showManualSubmitButton">
                 </form>
 
 
-      <div ng-show="$ctrl.showResults" class="foodtracker-result-list" style="overflow:scroll; height: 400px;">
+      <div ng-show="$ctrl.showResults" class="foodtracker-result-list" style="overflow:scroll; height: 200px;">
          <h4> Results </h4>
-                <div ng-repeat="result in $ctrl.searchResults">
-                    <input name="resultOption" type="radio" value="{{result.ndbno}}" ng-click="$ctrl.selectFoodResult($event)">
-                    <label for="resultOption">{{result.name}}</label>
-                </div>
+          <div ng-repeat="result in $ctrl.searchResults">
+              <input name="resultOption" type="radio" value="{{result.ndbno}}" ng-click="$ctrl.selectFoodResult($event)">
+              <label for="resultOption">{{result.name}}</label>
+          </div>
+          <div>
+            <br>
+            <a class="btn btn-success" href="#" ng-disabled="$ctrl.foodNotSelected" ng-click="$ctrl.getQuantity($event)">Select Food</a>
+          </div>
       </div>
-                <a href="#" ng-disabled="$ctrl.foodNotSelected" ng-click="$ctrl.getQuantity($event)">Select Food</a>
-            </div>
 
 
-            <div <h1>Select the Measurment and Quantity</h1>
+
+            <div ng-show="$ctrl.showMeasurmentsDiv">
+              <h4>Select the Measurment and Quantity</h4>
                 <div ng-repeat="measure in $ctrl.measuresArray">
                     <input ng-click="$ctrl.selectMeasurmentOption($event)" name="measurmentOption" type="radio" value="{{$index}}">
                     <label ng-model="ctrl.quantity" for="measurmentOption">{{measure.label}}</label>
@@ -68,6 +78,7 @@
                 <a href="#" ng-click="$ctrl.selectMeasurement($event)">Add Food To Tracker</a>
             </div>
         </div>
+      </div>
     </div>
 </div>
 

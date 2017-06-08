@@ -9,7 +9,6 @@
 
   function FoodTrackerController($http, $state, foodTrackerService) {
     const vm = this;
-    vm.showResults = false;
     vm.foodQuery = "";
     vm.groupNotSelected = true;
     vm.foodNotSelected = true;
@@ -45,14 +44,31 @@
     vm.getQuantity = getQuantity;
     vm.selectMeasurmentOption = selectMeasurmentOption;
     vm.getQuantity = getQuantity;
-    vm.selectMeasurement = selectMeasurement
+    vm.selectMeasurement = selectMeasurement;
+    vm.showForm = showForm;
+    vm.cancelForm = cancelForm;
 
 
     function $onInit () {
+      vm.showAddForm = false;
+      vm.showMeasurmentsDiv = false;
+      vm.showResults = false;
+      vm.showManualSubmitButton = false;
+    }
 
+    function cancelForm (e) {
+      e.preventDefault()
+      vm.showAddForm = !vm.showAddForm;
+      vm.foodQuery = ""
+    }
+
+    function showForm (e) {
+      e.preventDefault()
+      vm.showAddForm = !vm.showAddForm;
     }
 
     function searchInput (query) {
+      vm.showManualSubmitButton = !vm.showManualSubmitButton
       return foodTrackerService.getGroups(query)
         .then(res => {
           console.log(res)
@@ -78,7 +94,8 @@
     }
 
     function selectGroup (query) {
-        vm.showResults = !vm.showResults
+
+      vm.showResults = !vm.showResults
       console.log(query);
       console.log(vm.selectedGroup);
       foodTrackerService.getSearchResults(vm.selectedGroup, query)
@@ -92,6 +109,7 @@
 
     function getQuantity(e) {
       e.preventDefault()
+      vm.showMeasurmentsDiv = !vm.showMeasurmentsDiv
       console.log("checking get qunaity");
       foodTrackerService.getFoodMeasures(vm.ndbno)
         .then(res=> {
