@@ -51,13 +51,15 @@
             .catch(err => console.log(err))
       }
 
-      function postNutrients(entry){
-        console.log(entry);
+      function postNutrients(macro, micro){
+        console.log(macro, micro);
         return $http
-          .get(APP_CONFIG.API_BASE_URL+'api/micro'/1)
+          .post(APP_CONFIG.API_BASE_URL+'api/micro/1', {macro, micro})
           .then(res => console.log(res.data))
           .catch(err => console.log(err))
       }
+
+
     }
 
 }());
