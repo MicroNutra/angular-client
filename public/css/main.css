@@ -20,6 +20,11 @@ div.row#food-tracker-shell {
   justify-content: space-between;
 }
 
+div.row#dash-tracker-shell {
+  display: flex;
+  justify-content: space-between;
+}
+
 img#avatar {
   height: 200px;
   width: auto;
@@ -39,6 +44,51 @@ div.col-lg-8#search-area {
   /*flex-wrap: wrap;*/
 }
 
+.dummyData{
+    display: flex;
+    flex-direction: row;
+}
+
+/*DASHBOARD TRACKER PAGE CSS*/
+
+.dashboardtrackerheader{
+    display:flex;
+    flex-direction: row;
+    /*justify-content:space-between;*/
+    align-items: center;
+    background-color: rgb(51, 49, 49);
+    height: 75px;
+    opacity: .90;
+    color: rgb(251, 251, 251);
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.dashlabel {
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    color: rgb(251, 251, 251);
+    font-size: 30px;
+}
+
+.dashboardTrackerTitle{
+    color: rgb(251, 251, 251);
+    font-size: 40px;
+    margin-left: 50px;
+    font-family: 'Righteous', cursive;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 /*FOOD TRACKER PAGES CSS*/
 .foodtrackerheader{
@@ -48,8 +98,9 @@ div.col-lg-8#search-area {
   background-color: rgb(51, 49, 49);
   height: 75px;
   opacity: .90;
-  color: #3aa6dd;
+  color: rgb(251, 251, 251);
   font-size: 20px;
+
 }
 
 
@@ -57,7 +108,6 @@ div.col-lg-8#search-area {
   display:flex;
   justify-content: center;
   flex-direction: column;
-  width:90vw;
   margin-left: 50px;
 
 }
@@ -82,9 +132,9 @@ div.img-container{
 }
 
 .foodTrackerTitle {
-    color: #3aa6dd;
-    font-size: 50px;
-    font-family: Orbitron;
+    color: rgb(251, 251, 251);
+    font-size: 40px;
+    font-family: 'Righteous', cursive;
 }
 
 
@@ -102,6 +152,6 @@ div.img-container{
     background-color: rgb(51, 49, 49);
     height: 75px;
     opacity: .90;
-    color: #3aa6dd;
+    color: rgb(251, 251, 251);
     font-size: 20px;
 }

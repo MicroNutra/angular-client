@@ -1,6 +1,58 @@
-<div class='container'>
-  <h1 class='title'>Dashboard</h1>
-  <p class='about'>info...</p>
-  <a href="#" ng-click="$ctrl.getFoodTracker($event)">Food Tracker</a>
-  <a href="#" ng-click="$ctrl.testLog($event)">Test API CALL</a>
+<header class="dashboardtrackerheader">
+    <div class="dashboardTrackerTitle"> MicroLens </div>
+
+      <div class="dashlabel"> | Dashboard</div>
+
+</header>
+<div class="row" id="dash-tracker-shell">
+    <div class="col-lg-3" id="user-details">
+        <div class="img-container">
+            <img id="avatar" src="https://maxcdn.icons8.com/Share/icon/Cinema//avatar1600.png" alt="avatar" width=100>
+            <div class="person-details">
+                <h4 class="person-name">Peter Ostiguy</h4>
+                <p><strong>Username: </strong> postiguy</p>
+                <p><strong>Height: </strong> 6'1"</p>
+                <p><strong>Weight: </strong> 170lbs</p>
+                <p><strong>Age: </strong> 29</p>
+            </div>
+        </div>
+    </div>
+
+    <div class='container'>
+
+        <h1 class='title'>Dashboard</h1>
+        <p class='about'>info...</p>
+        <a href="#" ng-click="$ctrl.getFoodTracker($event)">Food Tracker</a>
+        <a href="#" ng-click="$ctrl.testLog($event)">Test API CALL</a>
+
+
+        <div class="dummyData">
+           <h4>Dummy div for d3 - Micro
+           <img id="macroOoverview" src="./images/dummyImages/MicroOverview.jpg.jpeg" alt="macroOoverview" height=300></h4>
+
+           <h4>Dummy div for d3 - Macro
+            <img id="microOoverview" src="./images/dummyImages/MacroOverview.jpg.jpeg" alt="macroOoverview" height=300>
+            </h4>
+        </div>
+
+        <div class="dummyData">
+           <h4>Dummy div for d3 - My Nutrients Needs Graph
+           <img id="macroOoverview" src="./images/dummyImages/MyNutrientNeeds.jpg.jpeg" alt="macroOoverview" height=300></h4>
+
+           <h4> Dummy div for d3 - My Food Lists
+            <img id="microOoverview" src="./images/dummyImages/FoodLists.jpg.jpeg" alt="macroOoverview" height=400>
+            </h4>
+        </div>
+
+    </div>
+
+
+
 </div>
+
+
+
+<footer class="foodtrackerfooter">
+   <div class="copywrite"> &copy; MicroLens </div>
+   <div class="production"> A MicroLens Production</div>
+</footer>
