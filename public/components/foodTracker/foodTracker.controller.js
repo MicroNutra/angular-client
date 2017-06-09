@@ -51,6 +51,7 @@
     vm.cancelForm = cancelForm;
     vm.uploadFoodImage = uploadFoodImage;
     vm.changed = changed;
+    vm.getDashboard = getDashboard;
 
     function $onInit () {
       vm.showAddForm = false;
@@ -62,7 +63,10 @@
       vm.vidAvailable=false;
     }
 
-
+function getDashboard(e){
+    e.preventDefault()
+    $state.go("dashboard")
+}
 
     function changed (){
         console.log('clicked')
