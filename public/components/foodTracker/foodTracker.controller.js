@@ -164,13 +164,11 @@ function getDashboard(e){
       }).catch(err => console.log(err))
       }
 
-    function selectMeasurmentOption(e){
+    function selectMeasurmentOption(e, label){
       console.log(e.target);
       vm.measurementNotSelected = !vm.measurementNotSelected
-      vm.measurment = e.target.value
+      vm.measurment = label
       console.log(vm.measurment);
-      // console.log(vm.quantity);
-      // console.log(vm.unit);
     }
 
     function selectMeasurement(e) {
@@ -182,28 +180,29 @@ function getDashboard(e){
       vm.nutrientsArray.forEach(item => {
         console.log(item);
         console.log(normalizeData(item));
-            // vm.nutrientName = normalizeData(item);
-            // vm.nutrientGroup = item.group
-            vm.value = +item.measures[vm.measurment].value
-            vm.unit = item.unit
-            vm.entry = (+vm.value*vm.quantity)+vm.unit
-            item.name = normalizeData(item)
-            console.log(vm.nutrientsArray);
-            if (item.group === "Proximates"){
-              vm.macro[item.name] = vm.entry
-              console.log(vm.macro[item.name]);
-            }else if(item.group === "Vitamins"){
-              // item.name = normalizeData(item)
-              vm.micro.vitamins[item.name] = vm.entry
-            }else if(item.group === "Minerals"){
-              // item.name = normalizeData(item)
-              vm.micro.minerals[item.name] = vm.entry
-            }
-            // vm.nutrientCounter++
 
-            foodTrackerService.postNutrients(vm.macro, vm.micro, vm.foodName, vm.quantity, vm.measurment)
-            console.log(vm.macro);
-            console.log(vm.micro);
+        vm.value = +item.measures[0].value
+        vm.unit = item.unit
+        vm.entry = (+vm.value*vm.quantity)+vm.unit
+        item.name = normalizeData(item)
+        console.log(vm.nutrientsArray);
+        if (item.group === "Proximates"){
+          vm.macro[item.name] = vm.entry
+          console.log(vm.macro[item.name]);
+        }else if(item.group === "Vitamins"){
+          // item.name = normalizeData(item)
+          vm.micro.vitamins[item.name] = vm.entry
+        }else if(item.group === "Minerals"){
+          // item.name = normalizeData(item)
+          vm.micro.minerals[item.name] = vm.entry
+        }
+        // vm.nutrientCounter++
+        console.log(vm.macro);
+        console.log(vm.micro);
+        console.log(vm.quantity);
+        console.log(vm.measurment);
+        foodTrackerService.postNutrients(vm.macro, vm.micro, vm.foodName, vm.quantity, vm.measurment)
+
       })
 
     }
