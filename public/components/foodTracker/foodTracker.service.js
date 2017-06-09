@@ -51,7 +51,7 @@
             .catch(err => console.log(err))
       }
 
-      function postNutrients(macro, micro, name){
+      function postNutrients(macro, micro, name, quantity, measurement){
         console.log(macro, micro, name, quantity, measurement);
         return $http
           .post(APP_CONFIG.API_BASE_URL+'api/micro/1', {macro, micro, name, quantity, measurement})
