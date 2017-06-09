@@ -32,14 +32,22 @@
             <d3-dashboard-pie></d3-dashboard-pie>
         </div>
 
-        <!-- <div class="dummyData">
-            <h4>Dummy div for d3 - My Nutrients Needs Graph
+        <div class="dummyDataText">
+            <div ng-repeat="food in $ctrl.microData">
+                <ul class="foodlist">
+                    <li><h3>{{$ctrl.foodData[$index].food_name.substr(0, $ctrl.foodData[$index].food_name.indexOf(','))}}</h3></li>
+                </ul>
+                <ul class="foodlist" ng-repeat="(key, vitamins) in food" ng-if="$index > 4">
+                    <li ng-if="vitamins"><strong>{{key}}:</strong>&Tab;{{vitamins}}</li>
+                </ul>
+            </div>
+            <!-- <h4>Dummy div for d3 - My Nutrients Needs Graph
            <img id="macroOoverview" src="./images/dummyImages/MyNutrientNeeds.jpg.jpeg" alt="macroOoverview" height=300></h4>
 
             <h4> Dummy div for d3 - My Food Lists
             <img id="microOoverview" src="./images/dummyImages/FoodLists.jpg.jpeg" alt="macroOoverview" height=400>
-            </h4>
-        </div> -->
+            </h4> -->
+        </div>
 
     </div>
 

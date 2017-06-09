@@ -49,7 +49,7 @@
             })
           })
       }).then(res=>{
-        console.log(vm.microData);
+        console.log('microData', vm.microData);
       })
     }
 

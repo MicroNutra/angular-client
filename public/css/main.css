@@ -96,6 +96,15 @@ div.col-lg-8#search-area {
     margin-top: 8em;
 }
 
+.dummyDataText{
+    display: flex;
+    flex-direction: row;
+}
+
+ul.foodlist{
+    list-style-type: none;
+}
+
 /*DASHBOARD TRACKER PAGE CSS*/
 
 .dashboardtrackerheader{
