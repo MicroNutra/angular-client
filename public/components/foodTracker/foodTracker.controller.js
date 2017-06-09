@@ -192,7 +192,7 @@ function getDashboard(e){
           console.log(vm.macro[item.name]);
         }else if(item.group === "Vitamins"){
           vm.isVitamin = true
-          vm.micro[is_vitamin] = vm.isVitamin
+          vm.micro["is_vitamin"] = vm.isVitamin
           vm.micro[item.name] = vm.entry
         }else if(item.group === "Minerals"){
           vm.isMineral = true
