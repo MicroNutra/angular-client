@@ -53,6 +53,7 @@
     vm.uploadFoodImage = uploadFoodImage;
     vm.changed = changed;
     vm.getDashboard = getDashboard;
+    vm.userId = localStorage.getItem('user')
 
     function $onInit () {
       vm.showAddForm = false;
@@ -205,7 +206,7 @@ function getDashboard(e){
         console.log(vm.micro);
         console.log(vm.quantity);
         console.log(vm.measurment);
-        foodTrackerService.postNutrients(vm.macro, vm.micro, vm.foodName, vm.quantity, vm.measurment)
+        foodTrackerService.postNutrients(vm.userId, vm.macro, vm.micro, vm.foodName, vm.quantity, vm.measurment)
       })
 
     }
