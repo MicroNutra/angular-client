@@ -93,8 +93,8 @@
                 <div ng-show="$ctrl.showMeasurmentsDiv">
                     <h4 class="resultlabel">Select the Measurment and Quantity</h4>
                     <div ng-repeat="measure in $ctrl.measuresArray">
-                        <input ng-click="$ctrl.selectMeasurmentOption($event)" name="measurmentOption" type="radio" value="{{$index}}">
-                        <label ng-model="ctrl.quantity" for="measurmentOption">{{measure.label}}</label>
+                        <input ng-click="$ctrl.selectMeasurmentOption($event, measure.label)" name="measurmentOption" type="radio" value="{{$index}}">
+                        <label for="measurmentOption">{{measure.label}}</label>
                     </div>
                     <input ng-model="$ctrl.quantity" type="number" min="1" name="quantity" value="">
                     <a href="#" ng-click="$ctrl.selectMeasurement($event)" class="btn btn-success">Add Food To Tracker</a>

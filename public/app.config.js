@@ -36,7 +36,7 @@
 
       $authProvider.facebook({
       name: 'facebook',
-      url: 'http://localhost:8080/auth/facebook',
+      url: 'http://ec2-34-208-220-169.us-west-2.compute.amazonaws.com/auth/facebook',
       clientId: '1034756833322079',
       authorizationEndpoint: 'https://www.facebook.com/v2.5/dialog/oauth',
       redirectUri: window.location.origin + '/dashboard',
