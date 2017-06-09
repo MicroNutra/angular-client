@@ -9,7 +9,10 @@ body {
   background-color: rgb(238,238,238);
 }
 
-
+label {
+    color: white;
+    font-weight: lighter;
+}
 * {
   font-family: 'VAG Light', sans-serif;
 }
@@ -32,12 +35,16 @@ div.img-container {
     align-items: center;
 }
 
-img#avatar {
-  height: 300px;
-  width: auto;
 
-  margin-left: -5px;
+
+img#avatar {
+  height: 275px;
+  width: auto;
+  background-color: rgb(228, 224, 224);
+  margin-top: 10px;
 }
+
+
 
 div.col-lg-2#user-details {
   display: flex;
@@ -76,7 +83,7 @@ div.col-lg-8#search-area {
     /*margin-left: 100px;*/
     border: 1px solid black;
     background-color: rgb(35, 1, 51);
-    opacity: .65;
+    opacity: .75;
     color: white;
 }
 
@@ -99,14 +106,15 @@ div.col-lg-8#search-area {
 .btn {
     border-radius: 5px;
     padding: 5px 30px;
+
 }
 
 
 .btn-success {
     color: #fff;
-    background-color: rgba(31, 29, 29, 0.94);
+    background-color: rgb(17, 19, 20);
     border-color: #777;
-    font-size: 10px;
+    font-size: 12px;
 }
 
 
@@ -115,12 +123,21 @@ div.col-lg-8#search-area {
     display:flex;
     flex-direction: row;
     align-content: space-between;
+    background-image: url('../images/main.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:rgba(0, 0, 0, 0.5);
+
 }
 
 div.img-container{
         margin-top: 10px;
-        border: 1px solid black;
+        border: 1px solid rgb(238, 238, 238);
+        border-radius: 5px;
         margin-left: 10px;
+        border-radius: 6px;
+        background-color: black;
+        opacity: .80;
 }
 
 div.col-lg-8#search-area {
@@ -138,8 +155,13 @@ div.col-lg-8#search-area {
     /*justify-content: center;*/
     /*border: 1px solid black;*/
     align-content: space-between;
+    background-color: black;
+    opacity: .85;
+    border: 1px solid rgb(238, 238, 238);
+    border-radius: 5px;
 
 }
+
 
 .backToDashboard{
     font-size: 20px;
@@ -155,10 +177,10 @@ div.col-lg-8#search-area {
 .foodTrackTitle{
     border: 1px solid black;
     background-color: rgb(35, 1, 51);
-    opacity: .65;
+    /*opacity: .80;*/
     color: white;
-
     width: 100%;
+    border: 1px solid white;
 }
 
 .foodTrackerTitle {
@@ -172,7 +194,7 @@ div.col-lg-8#search-area {
   display:flex;
   justify-content:space-between;
   align-items: center;
-  background-color: rgb(51, 49, 49);
+  background-color: rgb(25, 24, 24);
   height: 75px;
   opacity: .90;
   color: rgb(251, 251, 251);
@@ -180,14 +202,11 @@ div.col-lg-8#search-area {
 }
 
 .clientName {
-
         color: rgb(251, 251, 251);
         font-size: 30px;
         font-family: 'Righteous', cursive;
         margin-right: 50px;
     }
-
-
 
 
 .foodtrackermain{
@@ -199,21 +218,36 @@ div.col-lg-8#search-area {
 }
 
 
-
 .foodtracker-result-list{
+    border: 1px solid rgb(238, 238, 238);
+
+}
+
+.resultlabel{
+    background-color: rgb(6, 1, 11);
+    color: white;
     border: 1px solid black;
+    width: 100%;
+    padding: 2px;
+    border: 1px solid rgb(238, 238, 238);
 }
 
 .person-details {
     heigth: 300px;
     background-color: white;
     width: 275px;
+    background-color: rgb(228, 224, 224);
+    margin-bottom: 10px;
 }
+
 .person-name {
-    color: rgb(42, 94, 249);
+    color: #eee;
     size: 15px;
     font-weight: bold;
-
+    background-color: black;
+    padding: 5px;
+    border: 1px solid rgb(238, 238, 238);
+    opacity: .75;
 }
 .user-details{
     border: 1px solid black;
@@ -238,9 +272,9 @@ div.col-lg-8#search-area {
 
 .foodtrackerfooter{
     display:flex;
-    justify-content:space-around;
+    justify-content:space-between;
     align-items: center;
-    background-color: rgb(51, 49, 49);
+    background-color: rgb(25, 24, 24);
     height: 50px;
     opacity: .90;
     color: rgb(251, 251, 251);
@@ -254,6 +288,8 @@ div.col-lg-8#search-area {
 }
 
 .cancelbtn{
-  background-color: red;
+  background-color: rgba(230, 7, 27, 0.9);
   color: white;
+  width: 250px;
+  padding: 2px;
 }

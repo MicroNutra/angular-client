@@ -1,5 +1,5 @@
 <header class="foodtrackerheader">
-    <div class="foodTrackerTitle"> MicroLens |</div>
+    <div class="foodTrackerTitle"> MicroLens | </div>
     <div class="backToDashboard">
       <a ng-click="$ctrl.getDashboard($event)" class="btn btn-success" > Back to Dashboard </a>
     </div>
@@ -14,6 +14,7 @@
 
 
 <div class="row" id="food-tracker-shell">
+
     <div class="col-lg-3" id="user-details">
         <div class="img-container">
             <img id="avatar" src="https://maxcdn.icons8.com/Share/icon/Cinema//avatar1600.png" alt="avatar" width=100>
@@ -41,7 +42,6 @@
 
             <div ng-show="$ctrl.showImageUploadForm">
 
-
                 <input ng-model="$ctrl.imgFile" ng-click='$ctrl.changed()' filelist-bind name="imgFile" type="file" id="the-photo-file-field">
                 <div ng-show="$ctrl.imgAvailable" id="preview">
                     <!--image will be inserted here-->
@@ -56,24 +56,27 @@
 
             <div ng-show="$ctrl.showAddForm" class="">
                 <br>
-                <a class="cancelbtn" href="#" ng-click="$ctrl.cancelForm($event)">Cancel</a>
-                <br>
+                <a class="cancelbtn" href="#" ng-click="$ctrl.cancelForm($event)"> &nbsp; Cancel Entry &nbsp;</a>
+                <p> </p>
                 <form name="$ctrl.searchForm" class="form-inline" novalidate ng-submit="$ctrl.searchInput($ctrl.foodQuery)">
                     <label for="search">Search Food: </label>
                     <input type="text" name="search" value="" placeholder="e.g. apple" ng-model="$ctrl.foodQuery">
                     <input type="submit" class="btn btn-success" value="Select Category">
                 </form>
+
                 <form name="$ctrl.selectGroupForm" class="form-inline" novalidate ng-submit="$ctrl.selectGroup($ctrl.foodQuery)" onSubmit="this.reset()">
                     <div ng-repeat="group in $ctrl.showGroups">
                         <input ng-click="$ctrl.activateSearchButton($event)" name="groupOption" type="radio" value="{{group}}">
                         <label for="groupOption">{{group}}</label>
                     </div>
-                    <input class="btn btn-default" type="submit" value="Search" ng-show="$ctrl.showManualSubmitButton">
-                </form>
+                    <br>
+                    <input class="btn btn-success" type="submit" value="Search" ng-show="$ctrl.showManualSubmitButton">
 
+                </form>
+                <p> &nbsp; </p>
 
                 <div ng-show="$ctrl.showResults" class="foodtracker-result-list" style="overflow:scroll; height: 200px;">
-                    <h4> Results </h4>
+                    <h4 class="resultlabel"> Results </h4>
                     <div ng-repeat="result in $ctrl.searchResults">
                         <input name="resultOption" type="radio" value="{{result.ndbno}}" ng-click="$ctrl.selectFoodResult($event)">
                         <label for="resultOption">{{result.name}}</label>
@@ -81,19 +84,20 @@
                     <div>
                         <br>
                         <a class="btn btn-success" href="#" ng-disabled="$ctrl.foodNotSelected" ng-click="$ctrl.getQuantity($event)">Select Food</a>
+                        <p></p>
                     </div>
                 </div>
 
 
 
                 <div ng-show="$ctrl.showMeasurmentsDiv">
-                    <h4>Select the Measurment and Quantity</h4>
+                    <h4 class="resultlabel">Select the Measurment and Quantity</h4>
                     <div ng-repeat="measure in $ctrl.measuresArray">
                         <input ng-click="$ctrl.selectMeasurmentOption($event, measure.label)" name="measurmentOption" type="radio" value="{{$index}}">
                         <label for="measurmentOption">{{measure.label}}</label>
                     </div>
                     <input ng-model="$ctrl.quantity" type="number" min="1" name="quantity" value="">
-                    <a href="#" ng-click="$ctrl.selectMeasurement($event)">Add Food To Tracker</a>
+                    <a href="#" ng-click="$ctrl.selectMeasurement($event)" class="btn btn-success">Add Food To Tracker</a>
                 </div>
             </div>
         </div>
