@@ -196,7 +196,7 @@ function getDashboard(e){
           vm.micro[item.name] = vm.entry
         }else if(item.group === "Minerals"){
           vm.isMineral = true
-          vm.micro[is_mineral] = vm.isMineral
+          vm.micro["is_mineral"] = vm.isMineral
           vm.micro[item.name] = vm.entry
         }
         // vm.nutrientCounter++
