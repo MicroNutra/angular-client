@@ -35,6 +35,15 @@
           .catch(err => console.log(err))
       }
 
+      function getUserInfo(id){
+        return $http
+        .get('http://ec2-34-208-220-169.us-west-2.compute.amazonaws.com/users/'+id)
+        .then(res=>{
+          console.log(res);
+          return res
+        })
+      }
+
       function getSearchResults (group, query) {
         return $http
           .get('https://api.nal.usda.gov/ndb/search/?format=json&q=' + query + '&offset=0&ds=Standard%20Reference&fg=' + group + '&api_key=pDeYeSa2iqRqPrmEd6n6IIxoCz9rnLjZweeSR0JF')

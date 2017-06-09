@@ -8,3 +8,5 @@
     })
   })
 ();
+
+$location.path('/dashboard')
