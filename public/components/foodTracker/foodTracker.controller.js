@@ -221,6 +221,9 @@ function getDashboard(e){
       else if(item.name.includes("Flouride")){
           item.name = "flouride"
        }
+      else if(item.name.includes("Niacin")){
+          item.name = "niacin"
+       }
       else if(item.name.includes("Iodine")){
           item.name = "iodine"
        }
@@ -256,6 +259,9 @@ function getDashboard(e){
        }
       else if(item.name.includes("Vitamin A")){
           item.name = "vitamin_a"
+       }
+      else if(item.name.includes("Vitamin B-6")){
+          item.name = "vitamin_b12"
        }
       else if(item.name.includes("Vitamin B-12")){
           item.name = "vitamin_b12"
