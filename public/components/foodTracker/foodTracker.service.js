@@ -17,6 +17,7 @@
       vm.getSearchResults = getSearchResults;
       vm.getFoodMeasures = getFoodMeasures;
       vm.postNutrients = postNutrients
+      vm.getUserInfo = getUserInfo
 
       function getGroups (query) {
         return $http
@@ -33,6 +34,15 @@
             return vm.groups
           })
           .catch(err => console.log(err))
+      }
+
+      function getUserInfo(id){
+        return $http
+        .get('http://ec2-34-208-220-169.us-west-2.compute.amazonaws.com/users/'+id)
+        .then(res=>{
+          console.log(res);
+          return res
+        })
       }
 
       function getSearchResults (group, query) {

@@ -4,10 +4,10 @@
     .module("app.foodTracker")
     .controller('FoodTrackerController', FoodTrackerController)
 
-  FoodTrackerController.$inject = ['$http', '$state', '$scope',  'foodTrackerService']
+  FoodTrackerController.$inject = ['$http', '$state', '$scope',  'foodTrackerService', '$location']
 
 
-  function FoodTrackerController($http, $state, $scope,  foodTrackerService) {
+  function FoodTrackerController($http, $state, $scope,  foodTrackerService, $location) {
     const vm = this;
     vm.foodQuery = "";
     vm.groupNotSelected = true;
@@ -38,6 +38,8 @@
     vm.foodName = ""
     vm.isVitamin = false
     vm.isMineral = false
+    vm.lastName =""
+    vm.firstName = ""
 
     vm.$onInit = $onInit;
     vm.searchInput = searchInput;
@@ -54,6 +56,7 @@
     vm.changed = changed;
     vm.getDashboard = getDashboard;
     vm.userId = localStorage.getItem('user')
+    vm.getUser = getUser
 
     function $onInit () {
       vm.showAddForm = false;
@@ -63,6 +66,17 @@
       vm.showImageUploadForm = false;
       vm.imgAvailable=false;
       vm.vidAvailable=false;
+      getUser()
+    }
+
+    function getUser(){
+      return foodTrackerService.getUserInfo(vm.userId)
+      .then(res=>{
+
+        console.log(res);
+        vm.firstName = res.data.data[0].first_name
+        vm.lastName = res.data.data[0].last_name
+      })
     }
 
 function getDashboard(e){
@@ -106,6 +120,10 @@ function getDashboard(e){
     function showForm (e) {
       e.preventDefault()
       vm.showAddForm = !vm.showAddForm;
+    }
+
+    function toDashBoard(){
+        $location.path('/dashboard');
     }
 
     function searchInput (query) {
@@ -187,7 +205,9 @@ function getDashboard(e){
         console.log(vm.measurment);
       })
       foodTrackerService.postNutrients(vm.macro, vm.micro, vm.foodName, vm.quantity, vm.measurment)
+      .then(res=>toDashBoard())
     }
+
 
     function normalizeData(item) {
       console.log(item);

@@ -5,7 +5,7 @@
     </div>
 
 
-    <div class="clientName"> | Peter
+    <div class="clientName">
         <img src="https://maxcdn.icons8.com/Share/icon/Cinema//avatar1600.png" alt="avatar" width=30>
     </div>
 
@@ -19,8 +19,7 @@
         <div class="img-container">
             <img id="avatar" src="https://maxcdn.icons8.com/Share/icon/Cinema//avatar1600.png" alt="avatar" width=100>
             <div class="person-details">
-                <h4 class="person-name">Peter Ostiguy</h4>
-                <p><strong>Username: </strong> postiguy</p>
+                <h4 class="person-name">{{$ctrl.firstName}}&nbsp;{{$ctrl.lastName}}</h4>
                 <p><strong>Height: </strong> 6'1"</p>
                 <p><strong>Weight: </strong> 170lbs</p>
                 <p><strong>Age: </strong> 29</p>
@@ -30,7 +29,7 @@
 
     <div class="col-lg-8" id="search-area">
         <div class="centerize">
-            <h1 class="foodTrackTitle">Food Tracker</h1>
+            <h1 class="foodTrackTitle">Add Food</h1>
 
             <input type="submit" ng-click="$ctrl.showForm($event)" class="btn btn-success" value="Manual Entry">
 
@@ -97,7 +96,7 @@
                         <label for="measurmentOption">{{measure.label}}</label>
                     </div>
                     <input ng-model="$ctrl.quantity" type="number" min="1" name="quantity" value="">
-                    <a href="#" ng-click="$ctrl.selectMeasurement($event)" class="btn btn-success">Add Food To Tracker</a>
+                    <a href="#" ng-click="$ctrl.selectMeasurement($event)" class="btn btn-success" >Add Food To Tracker</a>
                 </div>
             </div>
         </div>
