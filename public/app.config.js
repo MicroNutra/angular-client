@@ -32,6 +32,11 @@
         url: '/dashboard/postNutrients',
         component: 'postNutrients'
       })
+      .state({
+        name: 'dashboard.d3',
+        url: '/dashboard/postNutrients',
+        component: 'postNutrients'
+      })
 
 
       $authProvider.facebook({
