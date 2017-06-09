@@ -206,9 +206,9 @@ function getDashboard(e){
         console.log(vm.micro);
         console.log(vm.quantity);
         console.log(vm.measurment);
-        foodTrackerService.postNutrients(vm.macro, vm.micro, vm.foodName, vm.quantity, vm.measurment)
-      })
 
+      })
+      foodTrackerService.postNutrients(vm.macro, vm.micro, vm.foodName, vm.quantity, vm.measurment)
     }
 
     function normalizeData(item) {
@@ -218,6 +218,9 @@ function getDashboard(e){
       }
       else if(item.name.includes("Chromium")){
           item.name = "chromium"
+       }
+      else if(item.name.includes("Folate")){
+          item.name = "folate"
        }
       else if(item.name.includes("Flouride")){
           item.name = "flouride"

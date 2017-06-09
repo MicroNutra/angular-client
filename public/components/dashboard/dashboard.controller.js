@@ -17,7 +17,7 @@
     vm.userId = localStorage.getItem('user')
     vm.foodId = null
     vm.foodData = null
-    vm.microData = null
+    vm.microData = []
 
     vm.getUser = getUser
     vm.getFood = getFood
@@ -33,9 +33,9 @@
     }
 
     function getFood(){
-      return dashboardService.getFoodInfo(1)
+      return dashboardService.getFoodInfo(vm.userId)
       .then(res =>{
-        vm.foodData = res
+        vm.foodData = res.data.data
         console.log(vm.foodData);
         console.log(res.data.data[0].id)
         vm.foodId = res.data.data[0].id
@@ -43,12 +43,12 @@
         return true
       })
       .then(res=>{
-           dashboardService.getMicroInfo(vm.foodId)
-          .then(res =>{
-            vm.microData = res
+          // vm.foodData.forEach(food=>{
+          console.log(dashboardService.getMicroInfo(vm.foodData[0].id));
+          //   vm.microData.push(dashboardService.getMicroInfo(food.id))
+          // })
             console.log(vm.microData);
-          })
-          return true
+            return
       }).then(res=>{
         console.log("true");
       })
