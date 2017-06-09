@@ -191,7 +191,7 @@ function getDashboard(e){
             console.log(vm.nutrientsArray);
             if (item.group === "Proximates"){
               vm.macro[item.name] = vm.entry
-              console.log(vm.macro[name]);
+              console.log(vm.macro[item.name]);
             }else if(item.group === "Vitamins"){
               // item.name = normalizeData(item)
               vm.micro.vitamins[item.name] = vm.entry
