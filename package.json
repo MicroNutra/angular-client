@@ -2,8 +2,9 @@
   "name": "angular-drill",
   "version": "1.0.0",
   "description": "",
+  "main": "app.js",
   "scripts": {
-    "start": "gulp"
+    "start": "node app.js"
   },
   "keywords": [],
   "author": "",
