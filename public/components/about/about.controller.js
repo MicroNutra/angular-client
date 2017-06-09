@@ -18,11 +18,11 @@
 
     function facebookLogin(e){
       e.preventDefault()
-      $auth.authenticate('facebook')
+      $auth.authenticate('facebook', )
         .then(function(response) {
           console.log("hellow");
-          console.log(response);
-          // $window.localStorage.currentUser = JSON.stringify(response.data.user);
+          console.log(response.data);
+          localStorage.setItem("user", response.data.id);
           // $rootScope.currentUser = JSON.parse($window.localStorage.currentUser);
         })
         .catch(function(response) {
