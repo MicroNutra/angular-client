@@ -40,17 +40,16 @@
         console.log(res.data.data[0].id)
         vm.foodId = res.data.data[0].id
         console.log(vm.foodId);
-        return true
-      })
-      .then(res=>{
-          // vm.foodData.forEach(food=>{
-          console.log(dashboardService.getMicroInfo(vm.foodData[0].id));
-          //   vm.microData.push(dashboardService.getMicroInfo(food.id))
-          // })
-            console.log(vm.microData);
-            return
+          vm.foodData.forEach(food=>{
+             dashboardService.getMicroInfo(food.id)
+            .then(data=>{
+              console.log(data);
+              vm.microData.push(data.data.data[0])
+              console.log(vm.microData);
+            })
+          })
       }).then(res=>{
-        console.log("true");
+        console.log(vm.microData);
       })
     }
 

@@ -32,12 +32,13 @@
 
       function getMicroInfo(id){
         console.log(id);
-        $http
+         return $http
         .get('http://ec2-34-208-220-169.us-west-2.compute.amazonaws.com/api/micro/'+id)
-        .then(res=>{
-          console.log(res);
-          return res
-        })
+        // .then(res=>{
+        //   console.log(res);
+        //   return res.data.data[0]
+        // })
+
       }
 
 
