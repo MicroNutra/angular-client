@@ -2,9 +2,9 @@
   'use strict'
 
   angular.module('app')
-    .service('d3Service', d3Service)
+    .service('D3Service', D3Service)
 
-    function d3Service($http, $state, APP_CONFIG) {
+    function D3Service($http, $state, APP_CONFIG) {
       const vm = this
     }
 

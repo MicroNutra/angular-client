@@ -9,6 +9,38 @@ body {
   background-color: rgb(238,238,238);
 }
 
+/*svg.d3bar {
+    width: 800px;
+    height: 300px;
+}*/
+
+.bar {
+	fill: steelblue;
+}
+
+.bar:hover {
+	fill: brown;
+}
+
+.axis--x path {
+	display: none;
+}
+
+.toolTip {
+	position: absolute;
+	display: none;
+	width: auto;
+	height: auto;
+	background: none repeat scroll 0 0 white;
+	border: 0 none;
+	border-radius: 8px 8px 8px 8px;
+	box-shadow: -3px 3px 15px #888888;
+	color: black;
+	font: 12px sans-serif;
+	padding: 5px;
+	text-align: center;
+}
+
 label {
     color: white;
     font-weight: lighter;
@@ -61,6 +93,7 @@ div.col-lg-8#search-area {
 .dummyData{
     display: flex;
     flex-direction: row;
+    margin-top: 8em;
 }
 
 /*DASHBOARD TRACKER PAGE CSS*/
@@ -268,6 +301,12 @@ div.col-lg-8#search-area {
 .production{
     margin-right: 50px;
     font-family: 'Righteous', cursive;
+}
+
+div.footercontainer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 .foodtrackerfooter{

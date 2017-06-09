@@ -1,10 +1,10 @@
 (function() {
   'use strict'
   angular
-    .module("app.dashboard")
-    .component('dashboard', {
-      controller: 'DashboardController',
-      templateUrl: './components/dashboard/dashboard.html'
+    .module("app.dashboard.d3")
+    .component('d3Dashboard', {
+      controller: 'D3Controller',
+      templateUrl: './components/dashboard/d3.html'
     })
   })
 ();
