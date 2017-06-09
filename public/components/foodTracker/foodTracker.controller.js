@@ -140,6 +140,7 @@ function getDashboard(e){
       console.log(vm.selectedGroup);
       foodTrackerService.getSearchResults(vm.selectedGroup, query)
         .then(res => {
+          console.log(res.data);
           vm.searchResults = res.data.list.item
           console.log(vm.searchResults);
           console.log("lkdnwlkdnwelknw");
