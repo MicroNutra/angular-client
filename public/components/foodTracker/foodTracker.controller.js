@@ -200,10 +200,12 @@ function getDashboard(e){
               vm.micro.minerals[item.name] = vm.entry
             }
             // vm.nutrientCounter++
-
-            foodTrackerService.postNutrients(vm.macro, vm.micro, vm.foodName, vm.quantity, vm.measurment)
             console.log(vm.macro);
             console.log(vm.micro);
+            console.log(vm.quantity);
+            console.log(vm.measurment);
+            foodTrackerService.postNutrients(vm.macro, vm.micro, vm.foodName, vm.quantity, vm.measurment)
+
       })
 
     }
