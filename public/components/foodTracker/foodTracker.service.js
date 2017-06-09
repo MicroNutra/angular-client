@@ -9,7 +9,7 @@
       vm.groups = []
       vm.measuresArray = []
       vm.foodResults = []
-      vm.nutrientObject ={}
+      vm.nutrientObject = {}
 
       vm.getGroups = getGroups;
       vm.getSearchResults = getSearchResults;
