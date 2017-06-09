@@ -31,12 +31,13 @@
     vm.nutrientName = ""
     vm.nutrientGroup = ""
     vm.macro = {}
-    vm.micro = {minerals:{},vitamins:{}}
+    vm.micro = {}
     vm.addName = ""
     vm.nutrientCounter = 1
     vm.img = vm.vid = {}
     vm.foodName = ""
-
+    vm.isVitamin = false
+    vm.isMineral = false
 
     vm.$onInit = $onInit;
     vm.searchInput = searchInput;
@@ -190,11 +191,13 @@ function getDashboard(e){
           vm.macro[item.name] = vm.entry
           console.log(vm.macro[item.name]);
         }else if(item.group === "Vitamins"){
-          // item.name = normalizeData(item)
-          vm.micro.vitamins[item.name] = vm.entry
+          vm.isVitamin = true
+          vm.micro[is_vitamin] = vm.isVitamin
+          vm.micro[item.name] = vm.entry
         }else if(item.group === "Minerals"){
-          // item.name = normalizeData(item)
-          vm.micro.minerals[item.name] = vm.entry
+          vm.isMineral = true
+          vm.micro[is_mineral] = vm.isMineral
+          vm.micro[item.name] = vm.entry
         }
         // vm.nutrientCounter++
         console.log(vm.macro);
@@ -202,7 +205,6 @@ function getDashboard(e){
         console.log(vm.quantity);
         console.log(vm.measurment);
         foodTrackerService.postNutrients(vm.macro, vm.micro, vm.foodName, vm.quantity, vm.measurment)
-
       })
 
     }
