@@ -26,8 +26,14 @@ div.row#dash-tracker-shell {
   justify-content: space-between;
 }
 
+div.img-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 img#avatar {
-  height: 200px;
+  height: 300px;
   width: auto;
 
   margin-left: -5px;
@@ -65,6 +71,15 @@ div.col-lg-8#search-area {
 
 }
 
+.dashboardWelcome {
+
+    /*margin-left: 100px;*/
+    border: 1px solid black;
+    background-color: rgb(35, 1, 51);
+    opacity: .65;
+    color: white;
+}
+
 .dashlabel {
     display: flex;
     align-items: center;
@@ -96,47 +111,109 @@ div.col-lg-8#search-area {
 
 
 /*FOOD TRACKER PAGES CSS*/
+#food-tracker-shell{
+    display:flex;
+    flex-direction: row;
+    align-content: space-between;
+}
+
+div.img-container{
+        margin-top: 10px;
+        border: 1px solid black;
+        margin-left: 10px;
+}
+
+div.col-lg-8#search-area {
+    display: flex;
+    /* justify-content: center; */
+    /* flex-wrap: wrap; */
+    justify-content: space-between;
+}
+
+#search-area {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-top: 10px;
+    /*justify-content: center;*/
+    /*border: 1px solid black;*/
+    align-content: space-between;
+
+}
+
+.backToDashboard{
+    font-size: 20px;
+}
+.myStats{
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    border: 1px solid black;
+    margin-bottom: 100px;
+}
+
+.foodTrackTitle{
+    border: 1px solid black;
+    background-color: rgb(35, 1, 51);
+    opacity: .65;
+    color: white;
+
+    width: 100%;
+}
+
+.foodTrackerTitle {
+    color: rgb(251, 251, 251);
+    font-size: 40px;
+    font-family: 'Righteous', cursive;
+    margin-left: 50px;
+
+}
 .foodtrackerheader{
   display:flex;
-  justify-content:space-around;
+  justify-content:space-between;
   align-items: center;
   background-color: rgb(51, 49, 49);
   height: 75px;
   opacity: .90;
   color: rgb(251, 251, 251);
   font-size: 20px;
-  /*font-family: 'Righteous', cursive;*/
-
 }
+
+.clientName {
+
+        color: rgb(251, 251, 251);
+        font-size: 30px;
+        font-family: 'Righteous', cursive;
+        margin-right: 50px;
+    }
+
+
 
 
 .foodtrackermain{
   display:flex;
   justify-content: center;
   flex-direction: column;
-  margin-left: 50px;
+  margin-right: 50px;
 
 }
 
-div.img-container{
-    margin-top: 10px;
-    border: 1px solid black;
-    margin-left: 15px;
 
-}
 
 .foodtracker-result-list{
     border: 1px solid black;
 }
+
 .person-details {
+    heigth: 300px;
     background-color: white;
-    padding: 1em;
-    margin-left: 5px;
+    width: 275px;
 }
 .person-name {
     color: rgb(42, 94, 249);
     size: 15px;
     font-weight: bold;
+
 }
 .user-details{
     border: 1px solid black;
@@ -148,12 +225,6 @@ div.img-container{
     font-family: 'Righteous', cursive;
 }
 
-/*.foodTrackertopline{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    font-family: 'Righteous', cursive;
-}*/
 
 .copywrite{
     margin-left: 50px;
