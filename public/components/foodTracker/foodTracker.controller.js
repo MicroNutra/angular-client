@@ -4,10 +4,10 @@
     .module("app.foodTracker")
     .controller('FoodTrackerController', FoodTrackerController)
 
-  FoodTrackerController.$inject = ['$http', '$state', '$scope',  'foodTrackerService']
+  FoodTrackerController.$inject = ['$http', '$state', '$scope',  'foodTrackerService', '$location']
 
 
-  function FoodTrackerController($http, $state, $scope,  foodTrackerService) {
+  function FoodTrackerController($http, $state, $scope,  foodTrackerService, $location) {
     const vm = this;
     vm.foodQuery = "";
     vm.groupNotSelected = true;
@@ -122,6 +122,10 @@ function getDashboard(e){
       vm.showAddForm = !vm.showAddForm;
     }
 
+    function toDashBoard(){
+        $location.path('/dashboard');
+    }
+
     function searchInput (query) {
       vm.showManualSubmitButton = !vm.showManualSubmitButton
       return foodTrackerService.getGroups(query)
@@ -201,8 +205,9 @@ function getDashboard(e){
         console.log(vm.measurment);
       })
       foodTrackerService.postNutrients(vm.macro, vm.micro, vm.foodName, vm.quantity, vm.measurment)
-      $location.path('/dashboard')
+      .then(res=>toDashBoard())
     }
+
 
     function normalizeData(item) {
       console.log(item);

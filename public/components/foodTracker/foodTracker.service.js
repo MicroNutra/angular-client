@@ -17,6 +17,7 @@
       vm.getSearchResults = getSearchResults;
       vm.getFoodMeasures = getFoodMeasures;
       vm.postNutrients = postNutrients
+      vm.getUserInfo = getUserInfo
 
       function getGroups (query) {
         return $http
