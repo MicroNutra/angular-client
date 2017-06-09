@@ -21,77 +21,45 @@
     <link rel=stylesheet type="text/css" href="/css/main.css">
     <link rel="stylesheet" type="text/css" href="/css/business-frontpage.css">
     <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
-
     <base href="/">
   </head>
   <body>
-    <!-- <nav class="container-fluid">
-      <div class="nav-logo">
-        <img src="images/logo.png" alt="logo">
-        <h1>microLens</h1>
-      </div>
-    </nav> -->
     <main class="row">
       <section class="col-lg-12 center-block">
         <ui-view></ui-view>
       </section>
     </main>
-      <!-- <script>
-        if ('serviceWorker' in navigator) {
-          window.addEventListener('load', () => { navigator.serviceWorker.register('./js/sw.js').then((registration) => {
-              console.log('ServiceWorker registration successful with scope: ', registration.scope);
-            }, (err) => {
-              console.log('ServiceWorker registration failed: ', err);
-            }).catch((err) => {
-              console.log(err)
-            });
-          });
-        } else {
-          console.log('service worker is not supported');
-        }
-      </script> -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.0-beta.3/angular-ui-router.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/1.0.1/angular-moment.js"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.0-beta.3/angular-ui-router.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/1.0.1/angular-moment.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/satellizer/0.15.5/satellizer.min.js"></script>
+    <script type="text/javascript">
+      window.onload=function(){
+       $(function(){
+           if(window.location.protocol==="https:")
+               window.location.protocol="http";
+        });
+      }
+    </script>
 
-      <!-- <script src='/js/vendor.bundle.js'></script> -->
-      <!-- <script src='/js/app.bundle.js'></script> -->
-      <script src="https://cdn.jsdelivr.net/satellizer/0.15.5/satellizer.min.js"></script>
+    <script src="/components/dashboard/dashboard.module.js"></script>
+    <script src="/components/dashboard/dashboard.component.js"></script>
+    <script src="/components/dashboard/dashboard.controller.js"></script>
 
-      <script src="/app.module.js"></script>
-      <script src="/app.config.js"></script>
+    <script src="/components/about/about.module.js"></script>
+    <script src="/components/about/about.component.js"></script>
+    <script src="/components/about/about.controller.js"></script>
 
-      <script src="/components/dashboard/dashboard.module.js"></script>
-      <script src="/components/dashboard/dashboard.component.js"></script>
-      <script src="/components/dashboard/dashboard.controller.js"></script>
+    <script src="/components/foodTracker/foodTracker.module.js"></script>
+    <script src="/components/foodTracker/foodTracker.component.js"></script>
+    <script src="/components/foodTracker/foodTracker.controller.js"></script>
+    <script src="/components/foodTracker/foodTracker.service.js"></script>
 
-      <script src="/components/about/about.module.js"></script>
-      <script src="/components/about/about.component.js"></script>
-      <script src="/components/about/about.controller.js"></script>
-
-      <script src="/components/foodTracker/foodTracker.module.js"></script>
-      <script src="/components/foodTracker/foodTracker.component.js"></script>
-      <script src="/components/foodTracker/foodTracker.controller.js"></script>
-      <script src="/components/foodTracker/foodTracker.service.js"></script>
-
-      <script src="/components/postNutrients/postNutrients.module.js"></script>
-      <script src="/components/postNutrients/postNutrients.component.js"></script>
-      <script src="/components/postNutrients/postNutrients.controller.js"></script>
-      <script src="/components/postNutrients/postNutrients.service.js"></script>
-
-      <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
-      <script>
-        var config = {
-          apiKey: "AIzaSyAVq9ozyAQgsNJeAKB4HPMDJIljRiOanfg",
-          authDomain: "q3-test.firebaseapp.com",
-          databaseURL: "https://q3-test.firebaseio.com",
-          projectId: "q3-test",
-          storageBucket: "q3-test.appspot.com",
-          messagingSenderId: "730172197768"
-        };
-        firebase.initializeApp(config);
-      </script>
+    <script src="/components/postNutrients/postNutrients.module.js"></script>
+    <script src="/components/postNutrients/postNutrients.component.js"></script>
+    <script src="/components/postNutrients/postNutrients.controller.js"></script>
+    <script src="/components/postNutrients/postNutrients.service.js"></script>
   </body>
 </html>

@@ -52,7 +52,7 @@
       }
 
       function postNutrients(macro, micro, name){
-        console.log(macro, micro);
+        console.log(macro, micro, name, quantity, measurement);
         return $http
           .post(APP_CONFIG.API_BASE_URL+'api/micro/1', {macro, micro, name, quantity, measurement})
           .then(res => console.log(res.data))
