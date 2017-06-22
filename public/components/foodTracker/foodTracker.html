@@ -41,7 +41,7 @@
 
             <div ng-show="$ctrl.showImageUploadForm">
 
-                <input ng-model="$ctrl.imgFile" ng-click='$ctrl.changed()' filelist-bind name="imgFile" type="file" id="the-photo-file-field">
+                <input ng-model="$ctrl.imgFile" ng-click='$ctrl.chooseFile()' filelist-bind name="imgFile" type="file" id="the-photo-file-field">
                 <div ng-show="$ctrl.imgAvailable" id="preview">
                     <!--image will be inserted here-->
                     <img ng-src="{{ $ctrl.the_url }}" width='500' />

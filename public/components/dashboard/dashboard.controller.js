@@ -27,9 +27,6 @@
     function $onInit () {
       getUser()
       getFood()
-
-
-
     }
 
     function getFood(){

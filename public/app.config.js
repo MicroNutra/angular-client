@@ -33,8 +33,7 @@
         component: 'postNutrients'
       })
 
-
-      $authProvider.facebook({
+    $authProvider.facebook({
       name: 'facebook',
       url: 'http://ec2-54-148-52-85.us-west-2.compute.amazonaws.com/auth/facebook',
       clientId: '1034756833322079',
