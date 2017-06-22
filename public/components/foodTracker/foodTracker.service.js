@@ -38,7 +38,7 @@
 
       function getUserInfo(id){
         return $http
-        .get('http://ec2-34-208-220-169.us-west-2.compute.amazonaws.com/users/'+id)
+        .get('http://ec2-54-148-52-85.us-west-2.compute.amazonaws.com/users/'+id)
         .then(res=>{
           console.log(res);
           return res
