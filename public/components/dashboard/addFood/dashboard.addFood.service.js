@@ -2,9 +2,9 @@
   'use strict'
 
   angular.module('app')
-    .service('foodTrackerService', foodTrackerService)
+    .service('addFoodService', addFoodService)
 
-    function foodTrackerService ($http, $state, APP_CONFIG) {
+    function addFoodService ($http, $state, APP_CONFIG) {
       const vm = this
       vm.foodResults = []
       vm.groups = []

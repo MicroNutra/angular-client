@@ -4,9 +4,6 @@
 
 </header>
 
-
-
-
 <div class="row" id="dash-tracker-shell">
     <div class="col-lg-3" id="user-details">
         <div class="img-container">
@@ -24,10 +21,14 @@
 
         <h1 class='dashboardWelcome'>Welcome {{$ctrl.firstName}}</h1>
 
-        <input type="submit" ng-click="$ctrl.getFoodTracker($event)" class="btn btn-success" value="Add Food">
+        <a href="#" ng-click="$ctrl.addFood($event)" class="btn btn-success addFoodBtn">Add Food</a>
+
+        <div class="addFoodComponent" ng-show="$ctrl.showAddFoodComponent">
+          <add-food></add-food>
+        </div>
 
         <div class="dummyData">
-            <d3-dashboard-bar></d3-dashboard-bar></h4>
+            <d3-dashboard-bar></d3-dashboard-bar>
 
             <d3-dashboard-pie></d3-dashboard-pie>
         </div>

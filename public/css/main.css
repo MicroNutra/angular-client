@@ -168,8 +168,13 @@ ul.foodlist{
     /*background-image: url('../images/main.jpg');*/
     background-repeat: no-repeat;
     background-size: cover;
-    background-color:rgba(0, 0, 0, 0.5);
+    background-color:black;
 
+}
+
+.addFoodBtn.btn.btn-success {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 div.img-container{
@@ -193,15 +198,11 @@ div.col-lg-8#search-area {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    margin-top: 10px;
-    /*justify-content: center;*/
-    /*border: 1px solid black;*/
     align-content: space-between;
     background-color: black;
     opacity: .85;
     border: 1px solid rgb(238, 238, 238);
     border-radius: 5px;
-
 }
 
 

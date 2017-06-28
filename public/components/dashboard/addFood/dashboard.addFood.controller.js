@@ -1,12 +1,12 @@
 (function () {
   'use strict'
   angular
-    .module("app.foodTracker")
-    .controller('FoodTrackerController', FoodTrackerController)
+    .module("app.addFood")
+    .controller('AddFoodController', AddFoodController)
 
-  FoodTrackerController.$inject = ['$state', '$scope', 'foodTrackerService', '$location']
+  AddFoodController.$inject = ['$state', '$scope', 'addFoodService', '$location']
 
-  function FoodTrackerController($state, $scope, foodTrackerService, $location) {
+  function AddFoodController($state, $scope, addFoodService, $location) {
     const vm = this
     vm.$onInit = $onInit
 
@@ -88,7 +88,7 @@
             $scope.$apply( () => {
               vm.the_url = event.target.result
               console.log(vm.the_url);
-              foodTrackerService.sendToS3(vm.the_url)
+              addFoodService.sendToS3(vm.the_url)
                 .then(res => console.log(res))
                 .catch(err => console.log(err))
             });
@@ -109,7 +109,7 @@
     function getQuantity (e) {
       e.preventDefault()
       vm.showMeasurmentsDiv = !vm.showMeasurmentsDiv
-      foodTrackerService.getFoodMeasures(vm.ndbno)
+      addFoodService.getFoodMeasures(vm.ndbno)
         .then(res => {
           vm.foodObject = res
           vm.measuresArray =  res.data.foods[0].food.nutrients[0].measures
@@ -120,7 +120,7 @@
     }
 
     function getUser() {
-      return foodTrackerService.getUserInfo(vm.userId)
+      return addFoodService.getUserInfo(vm.userId)
       .then(res => {
         vm.firstName = res.data.data[0].first_name
         vm.lastName = res.data.data[0].last_name
@@ -129,7 +129,7 @@
 
     function searchInput (query) {
       vm.showManualSubmitButton = !vm.showManualSubmitButton
-      return foodTrackerService.getGroups(query)
+      return addFoodService.getGroups(query)
         .then(res => {
           vm.showGroups = res
         })
@@ -138,7 +138,7 @@
 
     function selectGroup (query) {
       vm.showResults = !vm.showResults
-      foodTrackerService.getSearchResults(vm.selectedGroup, query)
+      addFoodService.getSearchResults(vm.selectedGroup, query)
         .then(res => {
           vm.searchResults = res.data.list.item
         })
@@ -171,7 +171,7 @@
           vm.micro[item.name] = vm.entry
         }
       })
-      foodTrackerService.postNutrients(vm.macro, vm.micro, vm.foodName, vm.quantity, vm.measurment)
+      addFoodService.postNutrients(vm.macro, vm.micro, vm.foodName, vm.quantity, vm.measurment)
       .then(res => toDashBoard())
     }
 

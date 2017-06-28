@@ -23,14 +23,9 @@
         component: 'dashboard'
       })
       .state({
-        name: 'foodTracker',
-        url: '/dashboard/foodTracker',
-        component: 'foodTracker'
-      })
-      .state({
-        name: 'test',
-        url: '/dashboard/postNutrients',
-        component: 'postNutrients'
+        name: 'addFood',
+        url: '/dashboard/addFood',
+        component: 'addFood'
       })
 
     $authProvider.facebook({

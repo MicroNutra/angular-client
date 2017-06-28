@@ -4,7 +4,7 @@
     .module("app.upload")
     .controller('UploadController', UploadController)
 
-  UploadController.$inject = ['$http', '$state', 'foodTrackerService']
+  UploadController.$inject = ['$http', '$state', 'addFoodService']
 
 
   function UploadController($http, $state, uploadService) {

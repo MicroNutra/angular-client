@@ -1,56 +1,21 @@
-<header class="foodtrackerheader">
-    <div class="foodTrackerTitle"> MicroLens | </div>
-    <div class="backToDashboard">
-      <a ng-click="$ctrl.getDashboard($event)" class="btn btn-success" > Back to Dashboard </a>
-    </div>
-
-
-    <div class="clientName">
-        <img src="https://maxcdn.icons8.com/Share/icon/Cinema//avatar1600.png" alt="avatar" width=30>
-    </div>
-
-</header>
-
-
-
 <div class="row" id="food-tracker-shell">
-
-    <div class="col-lg-3" id="user-details">
-        <div class="img-container">
-            <img id="avatar" src="https://maxcdn.icons8.com/Share/icon/Cinema//avatar1600.png" alt="avatar" width=100>
-            <div class="person-details">
-                <h4 class="person-name">{{$ctrl.firstName}}&nbsp;{{$ctrl.lastName}}</h4>
-                <p><strong>Height: </strong> 6'1"</p>
-                <p><strong>Weight: </strong> 170lbs</p>
-                <p><strong>Age: </strong> 29</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-lg-8" id="search-area">
+    <div class="col-lg-12" id="search-area">
         <div class="centerize">
-            <h1 class="foodTrackTitle">Add Food</h1>
-
-            <input type="submit" ng-click="$ctrl.showForm($event)" class="btn btn-success" value="Manual Entry">
-
-            <input type="submit" ng-click="$ctrl.uploadFoodImage($event)" class="btn btn-success" value="Upload Image">
-
-
-            <!-- <a href="#" ng-click="$ctrl.showForm($event)">Manual Entry</a>
-            <a href="#" ng-click="$ctrl.uploadFoodImage($event)">Upload Image</a> -->
+            
+            <input type="submit" ng-click="$ctrl.showForm($event)" class="addFoodBtn btn btn-success" value="Manual Entry">
+            <input type="submit" ng-click="$ctrl.uploadFoodImage($event)" class="addFoodBtn btn btn-success" value="Upload Image">
 
             <div ng-show="$ctrl.showImageUploadForm">
-
-                <input ng-model="$ctrl.imgFile" ng-click='$ctrl.chooseFile()' filelist-bind name="imgFile" type="file" id="the-photo-file-field">
-                <div ng-show="$ctrl.imgAvailable" id="preview">
-                    <!--image will be inserted here-->
-                    <img ng-src="{{ $ctrl.the_url }}" width='500' />
-                </div>
-                <div id="data" class="large-8 columns">
-                    <h2 ng-show="$ctrl.imgAvailable" id="name">{{$ctrl.img.name}}</h2>
-                    <p ng-show="$ctrl.imgAvailable" id="size">{{$ctrl.img.size}}</p>
-                    <p ng-show="$ctrl.imgAvailable" id="type">{{$ctrl.img.type}}</p>
-                </div>
+              <input ng-model="$ctrl.imgFile" ng-click='$ctrl.chooseFile()' filelist-bind name="imgFile" type="file" id="the-photo-file-field">
+              <div ng-show="$ctrl.imgAvailable" id="preview">
+                  <!--image will be inserted here-->
+                  <img ng-src="{{ $ctrl.the_url }}" width='500' />
+              </div>
+              <div id="data" class="large-8 columns">
+                  <h2 ng-show="$ctrl.imgAvailable" id="name">{{$ctrl.img.name}}</h2>
+                  <p ng-show="$ctrl.imgAvailable" id="size">{{$ctrl.img.size}}</p>
+                  <p ng-show="$ctrl.imgAvailable" id="type">{{$ctrl.img.type}}</p>
+              </div>
             </div>
 
             <div ng-show="$ctrl.showAddForm" class="">
@@ -103,16 +68,4 @@
 
     </div>
 
-
-
-
 </div>
-
-
-
-
-<footer class="foodtrackerfooter">
-
-    <div class="copywrite"> &copy; MicroLens </div>
-    <div class="production"> A MicroLens Production</div>
-</footer>

@@ -10,6 +10,7 @@
     const vm = this
 
     vm.$onInit = $onInit;
+    vm.addFood = addFood;
     vm.getFoodTracker = getFoodTracker;
     vm.testLog = testLog
     vm.firstName = ""
@@ -27,6 +28,13 @@
     function $onInit () {
       getUser()
       getFood()
+      vm.showAddFoodComponent = false;
+    }
+
+    function addFood (e) {
+      e.preventDefault()
+      vm.showAddFoodComponent = !vm.showAddFoodComponent
+      console.log(vm.showAddFoodComponent);
     }
 
     function getFood(){
@@ -73,7 +81,7 @@
 
     function getFoodTracker(e) {
       e.preventDefault()
-      $state.go('foodTracker')
+      $state.go('dashboard')
     }
     function testLog(e) {
       e.preventDefault()
