@@ -14,7 +14,7 @@
 
       function getUserInfo(id){
         return $http
-        .get('http://ec2-34-208-220-169.us-west-2.compute.amazonaws.com/users/'+id)
+        .get('http://ec2-54-148-52-85.us-west-2.compute.amazonaws.com/users/'+id)
         .then(res=>{
           console.log(res);
           return res
@@ -23,7 +23,7 @@
 
       function getFoodInfo(id){
         return $http
-        .get('http://ec2-34-208-220-169.us-west-2.compute.amazonaws.com/api/food_log/'+id)
+        .get('http://ec2-54-148-52-85.us-west-2.compute.amazonaws.com/api/food_log/'+id)
         .then(res=>{
           console.log(res);
           return res
@@ -33,7 +33,7 @@
       function getMicroInfo(id){
         console.log(id);
          return $http
-        .get('http://ec2-34-208-220-169.us-west-2.compute.amazonaws.com/api/micro/'+id)
+        .get('http://ec2-54-148-52-85.us-west-2.compute.amazonaws.com/api/micro/'+id)
         // .then(res=>{
         //   console.log(res);
         //   return res.data.data[0]
