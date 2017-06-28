@@ -17,6 +17,7 @@
       vm.getSearchResults = getSearchResults;
       vm.getUserInfo = getUserInfo
       vm.postNutrients = postNutrients
+      vm.sendToS3 = sendToS3
 
       function getFoodMeasures (ndbno) {
         return $http
@@ -63,6 +64,11 @@
           .post(APP_CONFIG.API_BASE_URL + 'api/food_log/' + vm.userId, {macro, micro, name, quantity, measurement})
           .then(res => console.log(res.data))
           .catch(err => console.log(err))
+      }
+
+      function sendToS3 (img) {
+        return $http
+          .post('http://ec2-54-71-205-18.us-west-2.compute.amazonaws.com/image', {img})
       }
     }
 }());

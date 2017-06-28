@@ -35,7 +35,7 @@
       vm.foodNotSelected = true
       vm.foodObject = {}
       vm.groupNotSelected = true
-      vm.img = vm.vid = {}
+      vm.img = {}
       vm.imgAvailable= false
       vm.isVitamin = false
       vm.isMineral = false
@@ -59,6 +59,7 @@
       vm.showResults = false
       vm.showManualSubmitButton = false
       vm.showImageUploadForm = false
+      vm.the_url
       vm.unit = ""
       vm.value = ""
       vm.vidAvailable=false
@@ -86,9 +87,15 @@
           reader.onload = event => {
             $scope.$apply( () => {
               vm.the_url = event.target.result
+              console.log(vm.the_url);
+              foodTrackerService.sendToS3(vm.the_url)
+                .then(res => console.log(res))
+                .catch(err => console.log(err))
             });
           };
           reader.readAsDataURL(evt.target.files[0]);
+          console.log(evt.target.files);
+          console.log(vm.the_url);
         });
       });
     }
