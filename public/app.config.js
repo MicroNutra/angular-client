@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('app').config(config).constant('APP_CONFIG',{
-    API_BASE_URL: 'http://ec2-54-148-52-85.us-west-2.compute.amazonaws.com/'
+    API_BASE_URL: 'http://ec2-35-164-169-232.us-west-2.compute.amazonaws.com/'
   })
 
   config.$inject = ['$stateProvider', '$locationProvider', "$authProvider"]
@@ -30,7 +30,7 @@
 
     $authProvider.facebook({
       name: 'facebook',
-      url: 'http://ec2-54-148-52-85.us-west-2.compute.amazonaws.com/auth/facebook',
+      url: 'http://ec2-35-164-169-232.us-west-2.compute.amazonaws.com/auth/facebook',
       clientId: '1034756833322079',
       authorizationEndpoint: 'https://www.facebook.com/v2.5/dialog/oauth',
       redirectUri: window.location.origin + '/dashboard',
